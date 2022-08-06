@@ -1,0 +1,14 @@
+1 rounded
+<svg width="179" height="553" viewBox="0 0 179 553" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M98 93.5001C90.8333 109.5 92.7002 137.7 115.5 122.5C144 103.5 138.5 76.0001 133 63.5001C127.765 51.601 80.0005 37.0001 60.0005 54.0001C40.0005 71.0001 38.5005 110.5 52.5005 134.5C66.5005 158.5 131.5 165.5 154.5 151.5C177.5 137.5 185.361 70.9154 169.5 44.0002C153 16.0002 126.874 -5.47999 70.0004 3.49993C41.5004 7.99988 16.833 39.6667 3.49969 67.5C0.999525 95 -4.45636 122.866 26.5001 151.5C66.5004 188.5 81.5004 168 91.5004 188.5C99.4072 204.709 96.0002 200 96.0002 233.5V552.5" stroke="black"/>
+</svg>
+
+2 basique
+<svg width="2" height="472" viewBox="0 0 2 472" fill="none" preserveAspectRatio="xMidYMax meet" >
+                    <path d="M1 0L1 472" stroke="#8E49E5" stroke-width="4" pathLength="1"/>
+                </svg>  
+
+3 droit nouveau
+<svg width="2" height="445" viewBox="0 0 2 445" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 0L1 445" stroke="#8E49E6" stroke-width="2"/>
+</svg>
