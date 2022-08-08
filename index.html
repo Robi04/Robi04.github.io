@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -63,13 +62,16 @@
             <div id="title_2_left" class="lil_title">
                 <span><</span><span>ROBZ</span><span>></span>
             </div>
+            <div id="title_2_right" class="lil_title">
+                <span><</span><span>My scholarship</span><span>></span>
+            </div>
             <div id="player_card_container" >
                 <div id="player_card_left">
                     <div><span class="purple">Name </span><span> : Robin</span></div>
                     <div><span class="purple">Age </span><span> : 21</span></div>
                     <div><span class="purple">Situation </span> <span> : Student in engineering school (Data engineer course)</span></div>
                     <div><span class="purple">Hobbies </span><span> : </span></div>
-                    <div style="margin-left:40px">
+                    <div class="hobbies_list">
                         <ul>
                             <li>Sport (Gym, Volley, Snowboard)</li>
                             <li>Anime/Manga</li>
@@ -104,24 +106,31 @@
                 <span> WHO AM I ?</span>
             </div>
 
-            <span>SECTION 2 </span> 
+            
         </section>
         <section id="section_3">
+            <div id="title_3_middle" class="lil_title">
+                <span> SKILLS</span>
+            </div>
             <div id="line_container3" class="rope sketch line_container" path-speed="4" path-offset="0">
-                <svg id="svg-line3" width="2" height="472" viewBox="0 0 1.22 472" fill="none" preserveAspectRatio="xMidYMax meet" >
-                    <path id="path-line3" d="M1 0L1 472" stroke="#8E49E5" stroke-width="4" style="stroke-dasharray: 472; stroke-dashoffset: 472px;"></path>
-                </svg>            
+                <svg id="svg-line3" width="357" height="835" viewBox="0 0 368.5 835" fill="none" preserveAspectRatio="xMidYMax meet">
+                    <path id="path-line3" stroke="#8E49E5" stroke-width="2.75" style="stroke-dasharray: 1643.18; stroke-dashoffset: 1643.18px;" d="M184.458 0V147L0.999997 145.999V209.499L185.282 209.499H270.641H356V329.999H185.282L185.282 933" />
+                </svg> 
             </div>
-            <span>SECTION 3 </span> 
-        </section>
-        <section id="section_4">
-            <div id="line_container4" class="rope sketch line_container" path-speed="4" path-offset="0">
-                <svg id="svg-line4" width="2" height="472" viewBox="0 0 1.22 472" fill="none" preserveAspectRatio="xMidYMax meet" >
-                    <path id="path-line4" d="M1 0L1 472" stroke="#8E49E5" stroke-width="4" style="stroke-dasharray: 472; stroke-dashoffset: 472px;"></path>
-                </svg>            
+
+            <div id="skills_container">
+                <div id="ruban_skills_1" class="ruban_skills">
+                    <span>Data analyse / Machine learning / Web developpement / Video Game / Data analyse / Machine learning / Web developpement / Video Game / Data analyse / Machine learning / Web developpement / Video Game</span>
+                </div>
+                <div id="ruban_skills_2" class="ruban_skills">
+                    <span>PYTHON - R - EXCEL - TABLEAU - POWER BI - NUMPY - SCIKIT LEARN / PYTHON - R - EXCEL - TABLEAU - POWER BI - NUMPY - SCIKIT LEARN / PYTHON - R - EXCEL - TABLEAU - POWER BI - NUMPY - SCIKIT LEARN </span>
+                </div>
             </div>
-            <span>SECTION 4 </span> 
+            <div id="final_ball">
+            </div>
         </section>
+    </div>
+    <div id="menu_page" class="untriged">
     </div>
 </body>
 </html>

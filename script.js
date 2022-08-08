@@ -7,32 +7,14 @@ function toggleMenu(){
     menu3.classList.toggle("menu_third_toggled")
 
     let x = document.querySelector("#big_ball")
+    let opa = document.querySelector("#menu_page").style.opacity
+    document.querySelector("#menu_page").classList.toggle("triged")
+    document.querySelector("#menu_page").classList.toggle("untriged")
 }
 
 
 window.onload = (event) => {
-    // var count;
-    // var line = document.querySelector(".rope svg path");
-    // var length = line.getTotalLength();
-    // var section = line.parentElement.parentElement.parentElement
-    
-    // // The start position of the drawing
-    // line.style.strokeDasharray = length;
-    
-    // // Hide the triangle by offsetting dash. Remove this line to show the triangle before scroll draw
-    // line.style.strokeDashoffset = length;
-    
-    // // Find scroll percentage on scroll (using cross-browser properties), and offset dash same amount as percentage scrolled
-    // window.addEventListener("scroll", myFunction);
-    
-    // function myFunction() {
-    //   var scrollpercent = window.pageYOffset*1.5/section.clientHeight
-    //     console.log(scrollpercent)
-    //   var draw = length * scrollpercent;
-    
-    //   // Reverse the drawing (when scrolling upwards)
-    //   line.style.strokeDashoffset = length - draw;
-    // }
+    //Draw the SVG Lines
 
     //Prepare the variables
     var count = 0;
@@ -75,7 +57,7 @@ window.onload = (event) => {
             lines[count].style.strokeDasharray = length;
             lines[count].style.strokeDashoffset = length;
         }
-    }
+    }    
 }
 
 

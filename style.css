@@ -45,6 +45,7 @@ POUR TOUS LES ELEMENTS
 
 body{
     background-color:black;
+    overflow-x: hidden;
 }
 
 /*
@@ -201,6 +202,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     transform: translate(-50%, -50%);
     font-size: 40px;
 }
+
 #title_2_left {
     margin-top: 70px;
     margin-left: 50px;
@@ -213,6 +215,20 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     font-size: 100px;
 }
 
+#title_2_right {
+    position: absolute;
+    float: right;
+    top: 127vh;
+    right: 90px;
+}
+
+#title_2_right span{
+    color: white;
+    font-family:"Azert-Mono";
+    text-transform: uppercase;
+    font-size: 37px;
+}
+
 #player_card_container{
     width: 100%;
 }
@@ -220,12 +236,12 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
 #player_card_left{
     font-family: 'Azert-Mono';
     color: white;
-    left: 90px;
-    position: relative;
-    width: 36vw;
-    top: 182px;
+    left: 50px;
+    position: absolute;
+    width: 41vw;
+    top: 148vh;
     background-color: rgb(43,44,44);
-    padding: 36px;
+    padding: 26px;
     border-radius: 16px;
 }
 
@@ -233,11 +249,14 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     font-family: 'Azert-Mono';
     color: white;
     float: right;
-    right: 90px;
-    position: relative;
-    width: 39vw;
-    top: -239px;
-    padding: 36px;
+    right: 40px;
+    position: absolute;
+    width: 35vw;
+    top: 135vh;
+}
+
+#hobbies_list{
+    margin-left: 40px;
 }
 
 #player_card_right > div{
@@ -265,11 +284,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
 }
 
 #line_container3{
-    top: 200vh;
-}
-
-#line_container4{
-    top: 300vh;
+    top: 199vh;
 }
 
 
@@ -295,6 +310,112 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     max-width: 44vw;
 }
 
+#title_3_middle{
+    position: absolute;
+    left: 50%;
+    top: 231vh;
+    color: white;
+    font-family:"Azert-Mono";
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+#skills_container{
+    color: white;
+    font-family: "Ginger";
+    position: absolute;
+    transform: translate(-50%);
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    top:250vh;
+    font-size: 65px;
+}
+
+
+#ruban_skills_1{
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: absolute;
+    top: 5vh;
+    width: 120vw;
+    transform: rotate(10deg);
+    background-color: #E3DDDD;
+    border: 3px solid rgba(142, 73, 229, 1);
+    color: black;
+    left: -10vw;
+    
+}
+
+
+#ruban_skills_2{
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: absolute;
+    top: 19vh;
+    width: 120vw;
+    transform: rotate(-15deg);
+    background-color: black;
+    border: 3px solid rgba(142, 73, 229, 1);
+    left: -10vw;
+    
+}
+
+
+#ruban_skills_1 span {
+    display: inline-block;
+    width: max-content;
+    padding-left: 100%;
+    will-change: transform;
+    animation: inf_loop_left 25s linear infinite;
+}
+
+#ruban_skills_2 span {
+    display: inline-block;
+    width: max-content;
+    padding-left: 100%;
+    will-change: transform;
+    animation: inf_loop_left 25s linear infinite;
+}
+  
+@keyframes inf_loop_left {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+#final_ball{
+    position: relative;
+    top: 87%;
+    background-color: rgba(142, 73, 229, 1);;
+    padding: 15px;
+    width: 25px;
+    height: 25px;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 20px;
+}
+
+#section_4{
+    overflow: hidden;
+}
+
+
+#menu_page{
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: black;
+}
+
+.triged{
+    opacity: 1;
+}
+
+.untriged{
+    opacity: 0;
+}
 
 /*
 RESPONSIVE 5 PALIERS 
@@ -305,6 +426,7 @@ RESPONSIVE 5 PALIERS
 350px
 */
 @media (max-width: 1200px){
+    /*SECTION 1*/
     #img_container{
         width: 600px;
         top: 40%;
@@ -317,9 +439,28 @@ RESPONSIVE 5 PALIERS
         top: 50px;
         padding: 0px 3vw;
     }
+
+    /*SECTION 2*/
+
+    #player_card_left {
+       
+    }
+
+    #player_card_right {
+        right: 10px;
+    }
+
+    #title_2_right {
+        right: 25px;
+    }
+
+    #title_2_right span{
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 950px){
+    /*SECTION 1*/
     #img_container{
         width: 510px;
         top: 42%;
@@ -331,9 +472,30 @@ RESPONSIVE 5 PALIERS
     #section_1_content {
         padding-bottom: 45vh;
     }
+
+    /*SECTION 2*/
+    #player_card_right {
+        top: 145vh;
+    }   
+    #title_2_left{
+        font-size: 40px;
+        margin-left: 0;
+        margin-bottom: 50px;
+    }
+
+
+    #title_2_right {
+        right: 10px;
+        top: 142vh;
+    }
+
+    #title_2_right span{
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 769px){
+    /*SECTION 1*/
     #img_container{
         top: 46%;
         left: 42%;
@@ -346,9 +508,44 @@ RESPONSIVE 5 PALIERS
         font-size: 20px;
         top: -25vh;;
     }
+
+    /*SECTION 2*/
+    #player_card_right {
+
+    }
+
+    #title_2_left{
+        font-size: 40px;
+        margin-left: 0;
+        margin-bottom: 50px;
+        text-align: center;
+        background-color: black;
+        padding: 5px;
+        z-index: 3;
+    }
+
+    #title_2_left span {
+        font-size: 50px;
+        background-color: black;
+        padding: 5px;
+        z-index: 2;
+    }
+
+    #title_2_middle{
+        font-size: 30px;
+    }
+
+    #line_container2{
+        z-index: -1;
+    }
+
+    #title_2_right span{
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 650px){
+    /*SECTION 1*/
     #img_container{
         top: 48%;
         left: 42%;
@@ -357,10 +554,37 @@ RESPONSIVE 5 PALIERS
     #title1{
         font-size: 42px;
     }
+
+    /*SECTION 2*/
+    #player_card_left {
+        left: 35px;
+    }
+
+    #player_card_right {
+        width: 45vw;
+        right: -15px;
+    }
+
+    #player_card_right div{
+        font-size: 14px;
+    }
+
+    #player_card_left div{
+        font-size: 14px;
+    }
+
+    #title_2_right span{
+        font-size: 15px;
+    }
+
+    #hobbies_list{
+        margin-left: 10px;
+    }
 }
 
 
 @media (max-width: 500px){
+    /*SECTION 1*/
     #img_container{
         top: 48%;
         left: 42%;
@@ -369,9 +593,20 @@ RESPONSIVE 5 PALIERS
     #title1{
         font-size: 40px;
     }
+
+    /*SECTION 2*/
+    #player_card_left {
+        left: 25px;
+    }
+
+
+    #title_2_middle{
+        font-size: 25px;
+    }
 }
 
 @media (max-width: 480px){
+    /*SECTION 1*/
     #img_container{
         top: 49%;
         left: 40%;
