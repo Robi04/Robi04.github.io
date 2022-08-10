@@ -1,9 +1,7 @@
 /* 
 FEUILLE DE STYLE 
-DONNER DES SPECIFICATIONS A NOS ELEMENTS POUR CHANGER LEUR APPARENCE EN GENERAL
-LE SEUL BUT EST ESTHETIQUE MAIS ÇA FAIT TOUT SUR UN PORTFOLIO
+INDEX.HTML
 */
-
 
 /*
 POUR TOUS LES ELEMENTS
@@ -15,20 +13,24 @@ POUR TOUS LES ELEMENTS
     border-color: transparent;
 }
 
+a {
+    text-decoration: none;    
+}
+
+/*COLORS*/
 .cyan{
     color: cyan;
 }
-/*
-@font-face {
-    font-family: "Giger";
-    src: url("/assets/fonts/Ginger.ttf") format('truetype');
+
+.purple{
+    color: rgba(142, 73, 229, 1);
 }
 
-@font-face {
-    font-family: "Azert-Mono";
-    src: url("/assets/fonts/Azert-Mono.ttf") format('truetype');
-}*/
+.black{
+    color: black;
+}
 
+/*FONTS*/
 @font-face {
     font-family: Azert-Mono;
     src: url('assets/fonts/Azert-Mono.ttf');
@@ -39,6 +41,11 @@ POUR TOUS LES ELEMENTS
     src: url('assets/fonts/Ginger.ttf');
 }
 
+@font-face {
+    font-family: JapStyle;
+    src: url('assets/fonts/JapaneseStyle.ttf');
+}
+
 .Azert-Mono{
     font-family: "Azert-Mono";
 }
@@ -46,6 +53,21 @@ POUR TOUS LES ELEMENTS
 body{
     background-color:black;
     overflow-x: hidden;
+}
+
+#home{
+    font-size: 14px;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    padding: 5px;
+    background-color: black;
+    border-radius: 10px;
+    border: solid 1px rgba(142, 73, 229, 1);
+}
+
+#home:hover{
+    background-color: white;
 }
 
 /*
@@ -81,6 +103,7 @@ LE MENU A TOGGLE
     transition-duration: 1000ms;
 }
 
+/*ANIMATION -> KANJI*/
 .menu_first_toggled{
     transform: rotate(360deg);
 }
@@ -91,6 +114,29 @@ LE MENU A TOGGLE
 
 .menu_third_toggled{
     transform: translate(14px,-17px) rotate(-68deg) ;
+}
+
+/*NOUVELLE DIV DU MENU HAMBURGER*/
+#menu_content {
+    color: white;
+    font-size: 40px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu_content a{
+    color: rgba(142, 73, 229, 1);
+    text-decoration: none;
+    padding: 30px;
+    font-family: 'Ginger';
+    font-size: 70px;
+    border-bottom: 2px solid rgba(142, 73, 229, 1);
+    width: 300px;
+    text-align: center;
 }
 
 /*
@@ -184,6 +230,31 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     transition-duration: 1000ms;
 }
 
+/* DESSIN qui va peut être chanher au fil du temps mais pr l'instant gojo*/
+#img_container{
+    position: absolute;
+    top: 38%;
+    left: 47%;
+    background-image: url("./assets/img/GojoWhite.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 700px;
+    height: 700px;
+}
+
+/*PHRASES DE MON JOB ET DE CE QUE JE VEUX DEVENIR*/
+#quick_description{
+    position: relative;
+    top: -18vh;
+    left: 5vw;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    max-width: 44vw;
+}
+
+/* LES DIV QUI CONTIENNENT UN SVG (Line qui se draw avec le scroll)*/
 .line_container{
     position: absolute;
     top: 0;
@@ -192,6 +263,24 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     text-align: center;
     width: 100%;
 }
+
+.line_container svg{
+    height: 100%;
+}
+
+#line_container2{
+    top: 100vh;
+}
+
+#line_container3{
+    top: 199vh;
+}
+
+
+
+/*SECTION 2 - DESCRIPTIF DE MOI ET DES ECOLES QUE J'AI FREQUENTÉ*/
+
+/*TITLE "WHO AM I ?" */
 
 #title_2_middle{
     position: absolute;
@@ -203,6 +292,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     font-size: 40px;
 }
 
+/*TITLE "<ROBZ>"  */
 #title_2_left {
     margin-top: 70px;
     margin-left: 50px;
@@ -215,6 +305,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     font-size: 100px;
 }
 
+/* TITLE "MY SCHOLARSIOP" */
 #title_2_right {
     position: absolute;
     float: right;
@@ -229,6 +320,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     font-size: 37px;
 }
 
+/*DESCRIPTION DE MA PERSONNE - AGE NOM HOBBIES ...*/
 #player_card_container{
     width: 100%;
 }
@@ -245,6 +337,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     border-radius: 16px;
 }
 
+/* DESCRIPTION DE MA SCOLARITÉ */
 #player_card_right{
     font-family: 'Azert-Mono';
     color: white;
@@ -255,6 +348,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     top: 135vh;
 }
 
+/* LA LISTE (UL LI) DE MES HOBBIES*/
 #hobbies_list{
     margin-left: 40px;
 }
@@ -266,50 +360,13 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     background-color: rgb(43,44,44);
 }
 
-.purple{
-    color: rgba(142, 73, 229, 1);
-}
-
 #player_card_left div{ 
     padding-bottom: 20px;
 }
 
+/* SECTION 3 - MES SKILLS*/
 
-.line_container svg{
-    height: 100%;
-}
-
-#line_container2{
-    top: 100vh;
-}
-
-#line_container3{
-    top: 199vh;
-}
-
-
-#img_container{
-    position: absolute;
-    top: 38%;
-    left: 47%;
-    background-image: url("./assets/img/GojoWhite.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 700px;
-    height: 700px;
-}
-
-#quick_description{
-    position: relative;
-    top: -18vh;
-    left: 5vw;
-    font-size: 24px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    max-width: 44vw;
-}
-
+/*TITRE "SKILLS" */
 #title_3_middle{
     position: absolute;
     left: 50%;
@@ -320,6 +377,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     font-size: 40px;
 }
 
+/* DIV QUI CONTIENT LES 2 RUBANS DE MES SKILLS*/
 #skills_container{
     color: white;
     font-family: "Ginger";
@@ -331,7 +389,6 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     top:250vh;
     font-size: 65px;
 }
-
 
 #ruban_skills_1{
     margin: 0 auto;
@@ -347,7 +404,6 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     left: -10vw;
     
 }
-
 
 #ruban_skills_2{
     margin: 0 auto;
@@ -379,11 +435,13 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     animation: inf_loop_left 25s linear infinite;
 }
   
+/* ANIMATION DES SPAN QUI DÉFILENT DANS LES RUBANS */
 @keyframes inf_loop_left {
     0% { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
 }
 
+/*LA OU LE SVG SE FINI */
 #final_ball{
     position: relative;
     top: 87%;
@@ -396,26 +454,35 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     border-radius: 20px;
 }
 
-#section_4{
-    overflow: hidden;
+/* SECTION 4 - PROJECTS */
+
+/* TITLE  "PROJECTS" EN ENORME POUR CHANGER  */
+#title_4_middle{
+    position: relative;
+    text-align: center;
+    top: 30px;
+    font-size: 250px;
 }
 
 
-#menu_page{
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    background-color: black;
+/* DIV QUI REPRESENTE UN PROJET ET QUI CONTIENT UN A HREF VERS UNE PAGE POUR DECRIRE LE PROJET*/
+.project{
+    position: relative;
+    top: 20px;
+    font-size: 50px;
+    font-family:"Ginger";
+    color: white;
+    margin: 40px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px rgba(142, 73, 229, 1);
+    left: 5vw;
+    width: 80vw;
 }
 
-.triged{
-    opacity: 1;
+.project span{
+    padding: 4px;
 }
 
-.untriged{
-    opacity: 0;
-}
 
 /*
 RESPONSIVE 5 PALIERS 
@@ -457,6 +524,11 @@ RESPONSIVE 5 PALIERS
     #title_2_right span{
         font-size: 30px;
     }
+
+    /*SECTION 3*/
+    #title_4_middle{
+        font-size: 200px;
+    }
 }
 
 @media (max-width: 950px){
@@ -491,6 +563,11 @@ RESPONSIVE 5 PALIERS
 
     #title_2_right span{
         font-size: 24px;
+    }
+
+    /*SECTION 3*/
+    #title_4_middle{
+        font-size: 150px;
     }
 }
 
@@ -542,6 +619,10 @@ RESPONSIVE 5 PALIERS
     #title_2_right span{
         font-size: 20px;
     }
+    /*SECTION 3*/
+    #skills_container{
+        font-size: 35px;
+    }
 }
 
 @media (max-width: 650px){
@@ -580,6 +661,15 @@ RESPONSIVE 5 PALIERS
     #hobbies_list{
         margin-left: 10px;
     }
+
+    /*SECTION 3*/
+    #title_4_middle{
+       font-size: 100px;
+    }
+
+    .project{
+        font-size: 35px;
+    }
 }
 
 
@@ -603,6 +693,16 @@ RESPONSIVE 5 PALIERS
     #title_2_middle{
         font-size: 25px;
     }
+
+    /*SECTION 3*/
+    #title_4_middle{
+        font-size: 75px;
+    }
+     
+    .project{
+        font-size: 25px;
+        left: 0px;
+    }
 }
 
 @media (max-width: 480px){
@@ -619,4 +719,46 @@ RESPONSIVE 5 PALIERS
         font-size: 14px;
         top: -29vh;
     }
+}
+
+
+/* 
+FEUILLE DE STYLE 
+project_name_project.html
+*/
+
+.project_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bochutp_site_img{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./assets/img/test.png);
+    opacity: 0.25;
+}
+
+
+
+#title_2_projects{
+    position: relative;
+    top: 50px;
+    left: 30px;
+    color: white;
+    font-family: "Ginger";
+    font-size: 40px;
+}
+
+#content_project{
+    position: relative;
+    color: white;
+    top: 100px;
+    left: 30px;
+    width: 70vw;
 }
