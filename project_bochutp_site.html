@@ -14,7 +14,7 @@
         <div id="cursor">
         </div>
         <div id="header">
-            <button class="menu" id="toggle-menu" onclick="toggleMenu()">
+            <button class="menu" id="toggle-menu" onclick="toggleMenu(true)">
                 <div id="menu_first" class="bar_menu">
                     <svg width="56" height="14" viewBox="0 0 56 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.0311271 5.46161C0.494087 1.30206 28.8352 9.42109 45.1076 2.24185C61.3801 -4.93738 55.9743 7.42232 49.2329 7.42234C42.4916 7.42237 8.18897 13.9817 8.08048 13.1085C4.36466 12.1161 -0.431833 9.62115 0.0311271 5.46161Z" fill="#8E49E6"/>
@@ -27,17 +27,16 @@
                 </div>
                 <div id="menu_third" class="bar_menu">
                     <svg width="64" height="14" viewBox="0 0 64 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M60.694 0.651865C58.0785 -2.13693 27.5549 8.80315 9.47159 6.38555C-8.61167 3.96796 3.15491 8.20068 12.9656 11.1996C22.7764 14.1986 59.1451 14.5303 63.6506 11.3513C63.786 4.97273 63.3095 3.44066 60.694 0.651865Z" fill="#8E49E6"/>
-                        </svg>
-                        
+                    <path d="M60.694 0.651865C58.0785 -2.13693 27.5549 8.80315 9.47159 6.38555C-8.61167 3.96796 3.15491 8.20068 12.9656 11.1996C22.7764 14.1986 59.1451 14.5303 63.6506 11.3513C63.786 4.97273 63.3095 3.44066 60.694 0.651865Z" fill="#8E49E6"/>
+                    </svg>   
                 </div>
             </button>
         </div>
-        <div id="small_ball" style="padding:0px"></div>
+        <div id="small_ball"></div>
         <section id="section_1" >
             <div class="bochutp_site_img"></div>
             <div class="project_title">
-                <div id="title1" class="title">
+                <div class="title">
                     <div id="first_line">
                         <span class="span_title1">WEBSITE FOR </span>
                     </div>
@@ -49,39 +48,73 @@
             </div>
         </section>
         <section id="section_2" >
-            <div id="title_2_projects">
-                Website to promote the compagny
+
+            <div class="header_explaination_project">
+                <div id="title_2_projects">
+                    Website to promote the compagny
+                </div>
+
+                <div class="techno_section">
+                    <div class="techno_title title">
+                        <span>Used technologies : </span>
+                    </div>
+                    <ul class="list_techno">
+                        <div class="sans-serif">
+                            <span class="ul_span_techno Ginger">Mock-Up : </span>    
+                            <li >Adobe XD</li>
+                        </div>
+                        <div class="sans-serif">
+                            <span class="ul_span_techno Ginger">Languages :</span>   
+                            <li>HTML5</li>
+                            <li>CSS</li>
+                            <li>JS</li>
+                            <li>PHP</li>
+                        </div>
+                    </ul>
+                </div>
             </div>
-            <h2 id = 'subtitle_project' class="purple" >Context : </h2>
-            <div id="content_project" class="sans-serif">
-                During my second year of my first university diploma in computer science,
-                I had to do an internship for 2 months. It was the beginning of the covid,
-                so it was kinda hard to find a compagny to work for. Fortunately my family got me !
+
+            <!-- CONTEXT OF DEVELOPMENT -->
+            <div>
+                <h2 id = 'subtitle_project' class="purple" >Context : </h2>
+                <div id="content_project" class="sans-serif">
+                    During my second year of my first university diploma in computer science,
+                    I had to do an internship for 2 months. It was the beginning of the covid,
+                    so it was kinda hard to find a compagny to work for. Fortunately my family got me !
+                </div>
+                <div id="content_project" class="sans-serif">
+                    Bochu TP is a society specialised in public works (at high altitude). 
+                    They used to have a website (Wordpress) that was done in 2014. 
+                    The differents displayed informations where false and the design was not even decent. 
+                    So I asked them if I could rebuilt it.
+                    The goals were :
+                    <ul>
+                        <li>To display the ensentials information to the customers</li>
+                        <li>To impress the customers with differents pictures of their works</li>
+                        <li>To let the customers the possibility to contact the compagny</li>
+                        <li>To create an admin section to change the pictures of each section of the website</li>
+                    </ul>
+                </div>
             </div>
-            <div id="content_project" class="sans-serif">
-                Bochu TP is a society specialised in public works (at high altitude). 
-                They used to have a website (Wordpress) that was done in 2014. 
-                The differents displayed informations where false and the design was not even decent. 
-                So I asked them if I could rebuilt it.
-                The goals were :
-                <ul>
-                    <li>To display the ensentials information to the customers</li>
-                    <li>To impress the customers with differents pictures of their works</li>
-                    <li>To let the customers the possibility to contact the compagny</li>
-                    <li>To create an admin section to change the pictures of each section of the website</li>
-                </ul>
+            
+
+            <!-- MOCK-UP -->
+            <div>
+                <h2 id = 'subtitle_project' class="purple" >Mock-Up : </h2>
+                <div id="content_project" class="sans-serif">
+                    For the Mock-Up, I had to keep in mind to make something simple. When doing a personnal project you want to show-off your skills and end up doing useless things.
+                    The BOCHUTP compagny doesn't have colors that reflect it. The logo is black on white and so I decided to go for this color scheme.
+                </div>
+                <div id="content_project" class="sans-serif">
+                    I thought it was a good idea to make one page per activity so the potential customer can see the data he needs easely. 
+                    That catch the viewer's attention I decided display a huge picture that represents an activity when you click on a page
+                </div>
             </div>
-            <h2 id = 'subtitle_project' class="purple" >Mock-Up : </h2>
-            <div id="content_project" class="sans-serif">
-                For the Mock-Up, I had to keep in mind to make something simple. When doing a personnal project you want to show-off your skills and end up doing useless things.
-                The BOCHUTP compagny doesn't have colors that reflect it. The logo is black on white and so I decided to go for this color scheme.
-            </div>
-            <div id="content_project" class="sans-serif">
-                I thought it was a good idea to make one page per activity so the potential customer can see the data he needs easely. 
-                That catch the viewer's attention I decided display a huge picture that represents an activity when you click on a page
-            </div>
-            <h2 id = 'subtitle_project' class="purple" >Graphic Chart : </h2>
+            
+            
+            <!-- GRAPHIC CHART -->
             <div> 
+                <h2 id = 'subtitle_project' class="purple" >Graphic Chart : </h2>
                 <div>
                     <div id="content_project" class="sans-serif">
                         Used Font :
@@ -90,12 +123,41 @@
                         <span style="font-family:'system-ui'; font-size: 27px;"> SYSTEM - UI</span>
                     </div>
                 </div>
-                <div>
-                    <div id="content_project" class="sans-serif">
-                        Colors used :
+                <div class="sans-serif flex_colors">
+                        Used colors :
+                    <div class="sans-serif colors_container">
+                        <div class="colors">
+                            <div class="rect_color white_rect"></div>
+                            <span>rgb (255,255,255)</span>
+                        </div>
+                        
+                        <div class="colors">
+                            <div class="rect_color black_rect"></div>
+                            <span>rgb (0,0,0)</span>
                     </div>
-                    <div id="content_project" class="sans-serif">
-                        <div></div><div></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISUALS OF THE WEBSITE -->
+            <div>
+                <h2 id = 'subtitle_project' class="purple" >Visuals : </h2>
+                <div style="display: flex;">
+                    <div id="content_project" class="Ginger">
+                        <h2>Here is the welcome page :</h2>
+                        <span>Big pictures to impress with the essentials informations + a contact section at the end</span>
+                        <div id="vis_welcome_page" class="vis_1"></div>
+                    </div>
+    
+                    <div id="content_project" class="Ginger" style="margin-left: 50px;">
+                        <h2>The main activity of the compagny page :</h2>
+                        <div id="vis_copter" class="vis_1"></div>
+                    </div>
+    
+                    <div id="content_project" class="Ginger">
+                        <h2>The admin page to change the displayed pictures :</h2>
+                        <div id="vis_admin_page" class="vis_1"></div>
                     </div>
                 </div>
             </div>

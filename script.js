@@ -13,7 +13,7 @@
 
 
 // QUAND ON ACTIVE LE HAMBURGER
-function toggleMenu(){
+function toggleMenu(anim_load){
     let menu = document.querySelector(".menu")
     let ball = document.querySelector("#small_ball")
     let size;
@@ -31,17 +31,16 @@ function toggleMenu(){
 
     //REDUCTION DU MENU 
     if (ball.classList.contains("enclenche")){
-        size=1070;
+        size = ball.clientWidth*0.7
         r = 0;
         g = 0;
         b = 0;
         var timer2 = setInterval(myTimer2, 1);
         setTimeout(function(){
-            document.querySelector("#menu_content").remove()
+            if(anim_load){
+                document.querySelector("#menu_content").remove()
+            }
         },400)
-        setTimeout(function(){
-            ball.style.position = "absolute";
-        },600)
     }
 
     //AGRANDISSEMENT DU MENU
@@ -53,17 +52,18 @@ function toggleMenu(){
         ball.style.position = "fixed";
         var timer1 = setInterval(myTimer1, 1);
         setTimeout(function(){
-            let test = _("div","",ball,"menu_content")
-            let t1 = _("a","HOME",test,"","ahref_menu")
-            t1.href="index.html#section_1"
-            let t2 = _("a","SKILLS",test,"","ahref_menu")
-            t2.href= "index.html#section_3"
-            let t3 = _("a","WORKS",test,"","ahref_menu")
-            t3.href= "index.html#section_4"
-
-            document.querySelector("#menu_content").addEventListener("click", function(){
-                toggleMenu()
-            });
+            if(anim_load){
+                let test = _("div","",ball,"menu_content")
+                let t1 = _("a","HOME",test,"","ahref_menu")
+                t1.href="index.html#section_1"
+                let t2 = _("a","SKILLS",test,"","ahref_menu")
+                t2.href= "index.html#section_3"
+                let t3 = _("a","WORKS",test,"","ahref_menu")
+                t3.href= "index.html#section_4"
+                document.querySelector("#menu_content").addEventListener("click", function(){
+                    toggleMenu(true)
+                });
+            }
         },400)
     }
 
@@ -88,42 +88,122 @@ function toggleMenu(){
         size = size-7
         if(r<142)
         {
-            r = r+1.3
+            r = r+1.2
         }
         if(g<73){
-            g = g+1
+            g = g+1.2
         }
         if(b<229){
-            b = b+1.5
+            b = b+1.8
         }
         ball.style.borderRadius = size + "px";
         ball.style.padding = size + "px";
         ball.style.backgroundColor = "rgb("+r+ ","+g+ ","+b+ ")"
         if(size <= 0){
             ball.style.padding = "3px"
-            ball.style.borderRadius = "40px"
+            ball.style.borderRadius = "3px"
             clearInterval(timer2);
             document.querySelector("body").style.overflow = "visible";
             document.querySelector("body").style.overflowX = "hidden";
             ball.classList.remove("enclenche")
+            ball.style.position = "absolute";
         }
     }
 }
 
 
+
+
 window.onload = (event) => {
+    let body = document.querySelector("body")
 
-// let svg_animation = document.querySelector("#line_container_animation svg path")
-// let svg_offset = -2000
-// svg_animation.style.strokeDasharray = svg_animation.getTotalLength();
-// svg_animation.style.strokeDashoffset = svg_animation.getTotalLength();
-// setInterval(function(){
-//     svg_offset = svg_offset - 100;
-//     svg_animation.style.strokeDashoffset = svg_offset + "px"
-// },20)
+     //Curseur purple
+     let pointer = _("div", null, body, "pointer")
+     let pointer2 = _("div", null, body, "pointer2")
+ 
+     let mouse = { x: 0, y: 0 }
+     let p = { x: 0, y: 0, sx: 0, sy: 0 }
+ 
+     let mouse2 = { x: 0, y: 0 }
+     let p2 = { x: 0, y: 0, sx: 0, sy: 0 }
+ 
+     body.addEventListener("mousemove", function(event) {
+         mouse.x = event.clientX
+         mouse.y = event.clientY
+         mouse2.x = event.clientX
+         mouse2.y = event.clientY
+     })
+ 
+     setInterval(function() {
+         p.sx = (mouse.x - p.x)
+         p.sy = (mouse.y - p.y)
+ 
+         p.x += p.sx
+         p.y += p.sy
+ 
+         pointer.style.top = p.y + "px";
+         pointer.style.left = p.x +"px";
+ 
+         p2.sx = (mouse2.x - p2.x) / 8
+         p2.sy = (mouse2.y - p2.y) / 8
+ 
+         p2.x += p2.sx
+         p2.y += p2.sy
+ 
+         pointer2.style.top = p2.y + "px";
+         pointer2.style.left = p2.x +"px";
+     }, 1)
 
-    //Draw the SVG Lines
+
+    //Animation dès que l'on arrive sur une page
+    body.style.overflow = "hidden";
+    let small_ball = document.querySelector("#small_ball");
+    let size = document.querySelector("#section_1").clientWidth;
+    setTimeout(()=>{
+        if (document.querySelector("#section_1").clientHeight > document.querySelector("#section_1").clientHeight){
+            size = document.querySelector("#section_1").clientHeight
+        }
+        else{
+            size = document.querySelector("#section_1").clientWidth
+        }
+        small_ball.style.position="fixed"
+        small_ball.style.padding = size + "px";
+        small_ball.style.border_radius = size + "px";
+        small_ball.style.backgroundColor = "rgb(0,0,0)"
+        small_ball.style.zIndex = 3;
+        let r = 0;
+        let b = 0;
+        let g = 0;
+        let intervall_start = setInterval(() => {
+            size = size-7
+            if(r<142)
+            {
+                r = r+1.7
+            }
+            if(g<73){
+                g = g+1.1
+            }
+            if(b<229){
+                b = b+2
+            }
+            small_ball.style.borderRadius = size + "px";
+            small_ball.style.padding = size + "px";
+            small_ball.style.backgroundColor = "rgb("+r+ ","+g+ ","+b+ ")"
+            if(size <= 0){
+                small_ball.style.backgroundColor = "rgb(142,73,229)"
+                small_ball.style.padding = "3px"
+                small_ball.style.borderRadius = "3px"
+                clearInterval(intervall_start);
+                document.querySelector("body").style.overflow = "visible";
+                document.querySelector("body").style.overflowX = "hidden";
+                small_ball.classList.remove("enclenche")
+                small_ball.style.zIndex = 1;
+                small_ball.style.position = "absolute";
+            }
+        }, 3);
+    },200)
     
+    //Draw the SVG Lines
     //Prepare the variables
     var count = 0;
     var lines = document.querySelectorAll(".rope svg path");
@@ -165,5 +245,5 @@ window.onload = (event) => {
             lines[count].style.strokeDasharray = length;
             lines[count].style.strokeDashoffset = length;
         }
-    }    
+    }   
 }

@@ -7,6 +7,7 @@ INDEX.HTML
 POUR TOUS LES ELEMENTS
 */
 *{
+    cursor: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -66,6 +67,10 @@ a {
     font-family: "Futura";
 }
 
+.Ginger{
+    font-family: "Ginger";
+}
+
 .sans-serif{
     font-family: sans-serif;
 }
@@ -90,40 +95,49 @@ body{
     background-color: white;
 }
 
+
+.floating {
+    animation-name: floating;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(-50%,-50%) scale(1, 1);
+    }
+    50% {
+        transform: translate(-50%,-50%) scale(4, 4);
+    }
+    100% {
+        transform: translate(-50%,-50%) scale(1, 1);
+    }
+}
+
 /*
-ANIMATION WHILE DOM NOT FULLY LOADED 
+    Pointeur
 */
-#animation_page{
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    color: white;
-    height: 100vh;
-    width: 100vw;
-    z-index: 4;
-}
-#animation_page path{
-    stroke-dasharray: 4000;
-    stroke-dashoffset: 0px;
-    transform: translate(10%);
+
+#pointer{
+    background-color: rgba(142, 73, 229, 1);;
+    padding: 4px;
+    position: fixed;
+    border-radius: 10px;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    pointer-events: none;
 }
 
-#line_container_animation{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    text-align: center;
-    width: 100%;
-    text-align: center;
+#pointer2{
+    border: solid 1px rgba(142, 73, 229, 1);;
+    padding: 20px;
+    position: fixed;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    pointer-events: none;
 }
-
-.line_container_animation svg{
-    height: 100vh;
-}
-
 
 /*
 HEADER QUI CONTIENT LE MENU A TOGGLE
@@ -229,6 +243,7 @@ Title1 : "Welcome to the portfolio Of Robin "
 #title1{
     display: flex;
     flex-flow: column wrap;
+    font-size: 100px;
 }
 
 .title{
@@ -238,7 +253,6 @@ Title1 : "Welcome to the portfolio Of Robin "
     font-family: "Ginger";
     letter-spacing: 0.03em;
     color: rgb(255, 255, 255);
-    font-size: 100px;
 }
 
 #first_line{
@@ -261,14 +275,14 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
 
 
 #small_ball{
-    position: absolute;
+    position: fixed;
     top: 55%;
     left: 50%;
-    border: 1px solid rgba(142, 73, 229, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
     color: rgba(142, 73, 229, 1);
-    background-color: rgba(142, 73, 229, 1);
-    border-radius: 40px;
-    padding: 3px;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 1000px;
+    padding: 1000px;
     transform: translate(-50%, -50%);
     z-index: 2;
 }
@@ -538,7 +552,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     left: 5vw;
     width: 80vw;}
 
-.project :hover{
+#section_4 a :hover{
     color: rgba(142, 73, 229, 1);
 }
 
@@ -611,6 +625,7 @@ RESPONSIVE 5 PALIERS
     /*SECTION 2*/
     #player_card_right {
         top: 145vh;
+        width: 45vw;
     }   
     #title_2_left{
         font-size: 40px;
@@ -720,7 +735,7 @@ RESPONSIVE 5 PALIERS
     }
 
     #player_card_right {
-        width: 45vw;
+        width: 55vw;
         right: -15px;
     }
 
@@ -805,14 +820,8 @@ FEUILLE DE STYLE
 project_name_project.html
 */
 
-.project_title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 150px;
-}
 
+/* SECTION 1 DES PROJETS AVEC UNE IMAGE PLUS LE TITRE EN GROS DEVANT*/
 .bochutp_site_img{
     position: absolute;
     width: 100vw;
@@ -824,6 +833,19 @@ project_name_project.html
 }
 
 
+.project_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size:170px;
+}
+
+/* DEBUT DES INFORMATIONS AVEC LE TITRE DE LA SECTION 2 AINSI QUE LES TECHNOS SUR LA GAUCHE*/
+.header_explaination_project{
+    display: flex;
+    flex-direction: row;
+}
 
 #title_2_projects{
     position: relative;
@@ -831,10 +853,41 @@ project_name_project.html
     margin-top: 30px;
     color: white;
     font-family: "Ginger";
-    font-size: 60px;
-    width: 65vw;
+    font-size: 45px;
+    width: 60vw;
 }
 
+
+.techno_title{
+    font-size: 35px;
+    width: 30vw;
+}
+
+.techno_section{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+}
+
+.ul_span_techno{
+    font-size: 20px; 
+    color: darkslateblue;
+    position: relative;
+    left: -40px;
+}
+
+.list_techno{
+    position: relative;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content : space-evenly;
+}
+
+
+/* N'IMPORTE QUEL DIV QUI PARLE DU PROJET POUR EXPLIQUER UN POINT*/
 #content_project{
     position: relative;
     color: white;
@@ -848,10 +901,69 @@ project_name_project.html
     margin: 20px;
 }
 
+/* DES TITRE 2 DANS LA SECTION 2 DES PAGES DE PROJETS*/
 #subtitle_project{
     position: relative;
     font-family:'Ginger';
     margin-left: 70px;
     margin-top: 20px;
     font-size: 40px;
+}
+
+/* DIV POUR AFFICHER LES DIFFÉRENTES COULEUR UTILISÉS */
+.rect_color{
+    height: 70px;
+    width: 70px;
+    margin: 30px;
+}
+
+.black_rect{
+    background-color:  black;
+}
+
+.white_rect{
+    background-color:  white;
+}
+
+.flex_colors{
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+}
+
+.colors_container{
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: darkslateblue;
+    position: relative;
+    color: white;
+    margin-top: 20px;
+}
+
+.colors{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* VISUALS */
+
+.vis_1{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 90vw;
+    margin-top: 20px;
+}
+
+#vis_welcome_page{
+    background-image: url(./assets/img/maq1.png);
+}
+
+#vis_copter{
+    background-image: url(./assets/img/maq2.png);
+}
+
+#vis_admin_page{
+    background-image: url(./assets/img/maq3.JPG);
 }

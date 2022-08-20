@@ -10,19 +10,12 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <!-- <div id="animation_page">
-        <div id="line_container_animation" path-speed="4" path-offset="0">
-            <svg width="675" height="1488" viewBox="0 0 475 1488" fill="none" preserveAspectRatio="xMidYMax meet">
-                <path stroke="#8E49E5" stroke-width="3.75" d="M219 0V365.5C233.195 372.022 237.524 377.767 243.5 389C251.615 393.394 255.872 396.146 262 402.5C270.656 402.929 274.49 405.72 281 411.5C288.404 411.765 291.54 413.923 296.5 419C304.993 420.426 308.46 421.734 311 425.5C319.386 426.915 323.637 428.471 329 435C337.864 438.17 340.188 442.167 343.5 450L379.5 463.5L455 477C469.39 486.61 473.713 493.313 475.5 507.5C484.246 512.106 484.317 524.32 482.5 550C463.625 561.311 452.988 565.519 434 569.5C410.819 573.259 394.941 574.511 386 582.5C-192.199 576.974 147.399 577.779 37 575L1 554.5C4.55758 541.672 6.15851 534.82 1 529.5L4.5 510L21 514L39.5 501.5L185 525L215.5 533.5L281 542.5H393.5L472.5 514C467.561 497.109 463.065 489.925 451 482.5C448.828 489.833 431.318 491.459 401 494.5C389.745 489.673 380.798 490.468 365.5 491C331.65 510.956 316.447 510.822 294 496.5C266.334 477.817 251.395 480.417 225.5 501.5L189 521.5L47.5 495.5M47.5 495.5L43.5 499L25.5 514H8.5L4.5 484.5C24.4231 460.858 35.2633 448.512 51 436.5L75 441L57 457L150.5 474L160 459.5L235.5 474L284.5 453L333.5 477L360.5 474L342 454.5L325 470L294 454.5L296.5 450V428L302.5 436.5L311 439L315.5 433V439L322 445L329 441L327 445L333.5 453L339.5 450L322 474L284.5 459.5L239.5 477L232.5 470L267.5 454.5V441L208.5 402.5L189 407L160 454.5L191.5 400L215.5 392.5V377C209.9 365.258 202.807 359.67 185 351C178.278 361.912 170 375 170 375L172 383L185 400L165 380L79.5 439L100 443L154.5 402.5C162.121 400.889 164.175 404.158 166.5 412.5L143 428L150.5 443L165 419L140 457L103.5 448L47.5 428C38.4553 423.031 35.7682 413.591 34.5 387L39.5 337C25.47 393.307 18.9589 422.908 8.5 474L47.5 356.5C63.233 345.511 68.0506 352.855 75 371.5C82.2792 381.111 87.8251 384.477 100 387L130 375C121.528 361.198 119.665 352.795 120 337C133.2 314.833 142.661 304.662 165 292.5L211 362L191.5 351H175.5L132.5 371.5L154.5 380L54 454.5C51.7451 469.912 45.9942 496.195 47.5 495.5ZM47.5 495.5L6 518L4.5 529.5C97.4745 536.253 143.193 540.284 185 549C193.439 547.704 198.732 544.689 208.5 538L219 585V1082.5" style="stroke-dasharray: 5677.76; stroke-dashoffset: -5.1414e+06px;"></path>
-            </svg>
-               
-        </div> -->
     </div>
     <div id="root">
         <div id="cursor">
         </div>
         <div id="header">
-            <button class="menu" id="toggle-menu" onclick="toggleMenu()">
+            <button class="menu" id="toggle-menu" onclick="toggleMenu(true)">
                 <div id="menu_first" class="bar_menu">
                     <svg width="56" height="14" viewBox="0 0 56 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.0311271 5.46161C0.494087 1.30206 28.8352 9.42109 45.1076 2.24185C61.3801 -4.93738 55.9743 7.42232 49.2329 7.42234C42.4916 7.42237 8.18897 13.9817 8.08048 13.1085C4.36466 12.1161 -0.431833 9.62115 0.0311271 5.46161Z" fill="#8E49E6"/>
@@ -54,7 +47,7 @@
                 </div>
             </div>
             <div id="small_ball"></div>
-            <div id="big_ball"></div>
+            <div id="big_ball" class="floating"></div>
             <div id="line_container1" class="rope sketch line_container" path-speed="4" path-offset="0">
                 <svg id="svg-line1" viewBox="0 0 10 1080" fill="none" preserveAspectRatio="xMidYMax meet">
                     <!-- 
@@ -146,7 +139,7 @@
             <div id="title_4_middle" class="title">
                 <span>PROJECTS</span>
             </div>
-            <a href="project_bochutp_site.html">
+            <a onclick="{toggleMenu(false); setInterval(()=>{if(document.querySelector('#small_ball').clientHeight > 2000){window.location.href = './project_bochutp_site.html';}},20) }">
                 <div class="project">
                     <span style="font-size: 14px;">.1 </span> <span>SITE WEB BOCHU TP</span>
                 </div>
