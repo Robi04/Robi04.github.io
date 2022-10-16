@@ -154,8 +154,26 @@ window.onload = (event) => {
          pointer2.style.left = p2.x +"px";
      }, 1)
 
+    // Click animation
+    body.addEventListener("mouseup", () => {
+        let pad_origine = 20
+        pas_pad = 1
+        test=false
+        let up = setInterval(function(){
+            pad_origine = pas_pad + pad_origine;
+            pointer2.style.padding = pad_origine + "px";
+            if(pad_origine>=30){
+                pas_pad = - 1
+                test = true
+            }
+            if (test && pad_origine==20){
+                clearInterval(up)
+            }
+        },5)
+    } )
 
-    //Animation dès que l'on arrive sur une page
+
+    // Animation dès que l'on arrive sur une page
     body.style.overflow = "hidden";
     let small_ball = document.querySelector("#small_ball");
     let size = document.querySelector("#section_1").clientWidth;
@@ -230,9 +248,9 @@ window.onload = (event) => {
         else{
             var scrollpercent = (window.pageYOffset-section.clientHeight*count)*1.2/section.clientHeight +0.9
         }
+
         
         var draw = length * scrollpercent;
-        console.log(scrollpercent)
 
         // Reverse the drawing (when scrolling upwards)
         lines[count].style.strokeDashoffset = length - draw;
@@ -246,4 +264,48 @@ window.onload = (event) => {
             lines[count].style.strokeDashoffset = length;
         }
     }   
+
+    document.addEventListener("scroll", function(){
+        var scrollParallax= (window.pageYOffset-document.querySelector("#section_3").clientHeight*2)/document.querySelector("#section_3").clientHeight +0.5
+        let paraNewPos1 = scrollParallax*150*2-400
+        let paraNewPos2 = -scrollParallax*150*2
+
+        let values = [paraNewPos1,paraNewPos1,paraNewPos1,paraNewPos1,paraNewPos2,paraNewPos2,paraNewPos2,paraNewPos2]
+
+        console.log(scrollParallax)
+
+        let rubs = this.documentElement.querySelectorAll(".ruban_skills span")
+        for(i = 0;i <= rubs.length; i+=1){
+            rubs[i].style.transform = "translateX("+ values[i] +"%)"
+        }
+    })
+
+
+    // Animation sneakers end contact
+    let sneaker = document.querySelector("#sneaker")
+    sneakerpath = document.querySelector("#sneaker path")
+    var length = sneakerpath.getTotalLength();
+    var start = 0
+
+    sneakerpath.style.strokeDasharray = "1000px";
+    sneakerpath.style.strokeDashoffset = length;
+
+    let drawSneaker = setInterval(function (){
+        start +=2
+        sneakerpath.style.strokeDashoffset = start + "px"
+     },1)
+
+    // Animation laces end contact
+    let lace = document.querySelector("#lace")
+    let lacepath = document.querySelector("#lace path")
+    var length = lacepath.getTotalLength();
+    var start = 0
+
+    lacepath.style.strokeDasharray = "1000px";
+    lacepath.style.strokeDashoffset = length;
+
+    let drawLace= setInterval(function (){
+        start +=2
+        lacepath.style.strokeDashoffset = start + "px"
+     },1)
 }

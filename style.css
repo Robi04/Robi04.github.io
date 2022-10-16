@@ -19,7 +19,7 @@ POUR TOUS LES ELEMENTS
 /* Hide scrollbar for Chrome, Safari and Opera */
 *::-webkit-scrollbar {
     display: none;
-  }
+}
 
 a {
     text-decoration: none;    
@@ -161,6 +161,10 @@ LE MENU A TOGGLE
     width: 100px;
     height: 100px;
     z-index: 10;
+}
+
+#menu_content a:hover{
+    color: white;
 }
 
 #menu_second{
@@ -464,6 +468,14 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     font-size: 65px;
 }
 
+.ruban_skills{
+    white-space: nowrap;
+}
+
+.ruban_skills span{
+    display: inline-block;
+}
+
 #ruban_skills_1{
     margin: 0 auto;
     overflow: hidden;
@@ -476,7 +488,6 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     border: 3px solid rgba(142, 73, 229, 1);
     color: black;
     left: -10vw;
-    
 }
 
 #ruban_skills_2{
@@ -496,24 +507,13 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
 #ruban_skills_1 span {
     display: inline-block;
     width: max-content;
-    padding-left: 100%;
-    will-change: transform;
-    animation: inf_loop_left 25s linear infinite;
 }
 
 #ruban_skills_2 span {
     display: inline-block;
     width: max-content;
-    padding-left: 100%;
-    will-change: transform;
-    animation: inf_loop_left 25s linear infinite;
 }
   
-/* ANIMATION DES SPAN QUI DÉFILENT DANS LES RUBANS */
-@keyframes inf_loop_left {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); }
-}
 
 /*LA OU LE SVG SE FINI */
 #final_ball{
@@ -560,6 +560,88 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     padding: 4px;
 }
 
+/* SECTION 5  */
+
+#title_5_middle{
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 30px;
+    font-size: 200px;
+}
+
+#content_section_5{
+    position: absolute;
+    left: 50px;
+    top: 433vh;
+    height: 40vh;
+    width: 100vw;
+}
+
+#content_section_5_left{
+    position: absolute;
+    left: 10vw;
+    height: 40vh;
+    width: 50vw;
+}
+
+#content_section_5_left div:hover{
+   color: rgba(142, 73, 229, 1);
+}
+
+#content_section_5_left div{
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: sans-serif;
+    color: white;
+}
+
+#content_section_5_right{
+    padding-left: 50px;
+    border-left: white 10px solid;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    right: 10px;
+    background-color: black;
+    width: 40vw;
+}
+
+#content_section_5_right ul{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    list-style-type:none;
+
+}
+#content_section_5_right ul > li {
+    line-height: 2.5em;
+}
+
+#content_section_5_right ul li :hover {
+    color: rgba(142, 73, 229, 1);
+}
+
+#divider{
+    position: relative;
+    top: 30vh;
+}
+
+#divider svg{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* SUPPERFLUE */
+
+#supperflue{
+    height: 50vh;
+    overflow: hidden;
+}
 
 /*
 RESPONSIVE 5 PALIERS 

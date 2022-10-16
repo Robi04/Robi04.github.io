@@ -8,6 +8,8 @@
     <title>Robin Bochu</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/ec422800ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     </div>
@@ -50,8 +52,6 @@
             <div id="big_ball" class="floating"></div>
             <div id="line_container1" class="rope sketch line_container" path-speed="4" path-offset="0">
                 <svg id="svg-line1" viewBox="0 0 10 1080" fill="none" preserveAspectRatio="xMidYMax meet">
-                    <!-- 
-                        <path id="path-line1" d="M1 0L1 472" stroke="#8E49E5" stroke-width="4" style="stroke-dasharray: 472; stroke-dashoffset: 472px;"></path> -->
                     <path id="path-line1" d="M 5,590 V 1080" stroke="#8E49E5" stroke-width="4" style="stroke-dasharray: 1080; stroke-dashoffset: 0;"></path>
                 </svg>         
             </div>
@@ -63,19 +63,19 @@
             </div>
         </section>
         <section id="section_2">
-            <div id="title_2_left" class="lil_title">
+            <div id="title_2_left" class="lil_title" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-offset="550">
                 <span><</span><span>ROBZ</span><span>></span>
             </div>
-            <div id="title_2_right" class="lil_title">
-                <span style="color:blueviolet"><</span><span>My scholarship</span><span style="color:blueviolet">></span>
+            <div id="title_2_right" class="lil_title" data-aos="fade-down-left" data-aos-offset="400" >
+                <span>"</span><span>My scholarship</span><span>"</span>
             </div>
-            <div id="player_card_container" >
-                <div id="player_card_left">
+            <div id="player_card_container">
+                <div id="player_card_left" data-aos="fade-down-right" data-aos-offset="300">
                     <div><span class="purple">Name </span><span> : Robin</span></div>
                     <div><span class="purple">Age </span><span> : 21</span></div>
                     <div><span class="purple">Situation </span> <span> : Student in engineering school (Data engineer course)</span></div>
                     <div><span class="purple">Hobbies </span><span> : </span></div>
-                    <div class="hobbies_list">
+                    <div class="hobbies_list" style="margin-left: 22px;">
                         <ul>
                             <li>Sport (Gym, Volley, Snowboard)</li>
                             <li>Anime/Manga</li>
@@ -87,16 +87,15 @@
                     </div>
                 </div>
                 <div id="player_card_right">
-                    <div>
+                    <div data-aos="zoom-in" data-aos-delay="100" data-aos-offset="350" >
                         <div><span class="purple">Telecom Saint Etienne </span> <span> - Data engineering</span></div>
                         <div><span class="cyan">3 </span><span> Years</span></div>
                     </div>
-                    <div>
+                    <div data-aos="zoom-in" data-aos-delay="100" data-aos-offset="300">
                         <div><span class="purple">IUT Annecy  </span> <span> - Diploma in computer science</span></div>
                         <div><span class="cyan">2 </span><span> years </span></div>
                     </div>
-                    <div>
-                          
+                    <div data-aos="zoom-in" data-aos-delay="100" data-aos-offset="250">
                         <div><span class="purple">Paul Héroult Highschool  </span> <span> - Bac Scientific speciality Earth and life sciences</span></div>
                         <div><span class="cyan">3 </span><span> years </span></div>
                     </div>
@@ -126,10 +125,16 @@
 
             <div id="skills_container">
                 <div id="ruban_skills_1" class="ruban_skills">
-                    <span>Data analyse / Machine learning / Web developpement / Video Game developpement</span>
+                    <span>Data analyse / Machine learning / Web developpement / Video Game developpement / </span>
+                    <span>Data analyse / Machine learning / Web developpement / Video Game developpement / </span>
+                    <span>Data analyse / Machine learning / Web developpement / Video Game developpement / </span>
+                    <span>Data analyse / Machine learning / Web developpement / Video Game developpement / </span>
                 </div>
                 <div id="ruban_skills_2" class="ruban_skills">
-                    <span>PYTHON - R - EXCEL - TABLEAU - POWER BI - NUMPY - SCIKIT LEARN </span>
+                    <span>PYTHON - R - EXCEL - TABLEAU - POWER BI - NUMPY - SCIKIT LEARN / </span>
+                    <span>PYTHON - R - EXCEL - TABLEAU - POWER BI - NUMPY - SCIKIT LEARN / </span>
+                    <span>PYTHON - R - EXCEL - TABLEAU - POWER BI - NUMPY - SCIKIT LEARN / </span>
+                    <span>PYTHON - R - EXCEL - TABLEAU - POWER BI - NUMPY - SCIKIT LEARN / </span>
                 </div>
             </div>
             <div id="final_ball">
@@ -140,27 +145,57 @@
                 <span>PROJECTS</span>
             </div>
             <a onclick="{toggleMenu(false); setInterval(()=>{if(document.querySelector('#small_ball').clientHeight > 2000){window.location.href = './project_bochutp_site.html';}},20) }">
-                <div class="project">
+                <div class="project" data-aos="fade-right" data-aos-delay="100">
                     <span style="font-size: 14px;">.1 </span> <span>SITE WEB BOCHU TP</span>
                 </div>
             </a>
             <a href="project_bochutp_software.html">
-                <div class="project">
+                <div class="project" data-aos="fade-right" data-aos-delay="150">
                     <span style="font-size: 14px;">.2 </span> <span>MANAGEMENT SOFTWARE</span>
                 </div>
             </a>
             <a href="index.html">
-                <div class="project">
+                <div class="project" data-aos="fade-right" data-aos-delay="200" > 
                     <span style="font-size: 14px;">.3 </span> <span>PORTFOLIO</span>
                 </div>
             </a>
             <a href="index.html">
-                <div class="project">
+                <div class="project" data-aos="fade-right" data-aos-delay="250">
                     <span style="font-size: 14px;">.4 </span> <span>KAGGLE</span>
                 </div>
             </a>
         </section>
+        <section id="section_5">
+            <div id="title_5_middle" class="Ginger">
+                <span>CONTACT ME</span>
+            </div>
+                <div id="content_section_5">
+                    <div id="content_section_5_left">
+                        <div style="font-size: 90px;">"MAIL ME"</div>
+                    </div>
+                    <div id="content_section_5_right" class="sans-serif">
+                        <ul style="color: white; font-size:40px">
+                            <li><span><i class="fab fa-github"></i> Github</span></li>
+                            <li><span><i class="fab fa-kaggle"></i> Kaggle</span></li>
+                            <li><span><i class="fab fa-linkedin"></i> Linkedin</span></li>
+                        </ul>
+                    </div>
+                    <div id="divider">
+                        <svg id="sneaker" width="230" height="294" viewBox="0 0 486 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M169.5 9.5L213 73C227.195 79.5218 238.524 87.267 244.5 98.5C252.615 102.894 256.872 105.646 263 112C271.656 112.429 275.49 115.22 282 121C289.404 121.265 292.54 123.423 297.5 128.5C305.993 129.926 309.46 131.234 312 135C320.386 136.415 324.637 137.971 330 144.5C338.864 147.67 341.188 151.667 344.5 159.5L380.5 173L456 186.5C470.39 196.11 474.713 202.813 476.5 217C485.246 221.606 485.317 233.82 483.5 259.5C464.625 270.811 453.988 275.019 435 279C411.819 282.759 395.941 284.011 387 292C-191.199 286.474 148.399 287.279 38 284.5L2 264C5.55758 251.172 7.15851 244.32 2 239L5.5 219.5L22 223.5L40.5 211L186 234.5L216.5 243L282 252H394.5L473.5 223.5C468.561 206.609 464.065 199.425 452 192C449.828 199.333 432.318 200.959 402 204C390.745 199.173 381.798 199.968 366.5 200.5C332.65 220.456 317.447 220.322 295 206C267.334 187.317 252.395 189.917 226.5 211L190 231L48.5 195.5M48.5 195.5L44.5 208.5L26.5 223.5H9.5L5.5 194C25.4231 170.358 36.2633 158.012 52 146L76 150.5L58 166.5L151.5 183.5L161 169L236.5 183.5L285.5 162.5L334.5 186.5L361.5 183.5L343 164L326 179.5L295 164L297.5 159.5V137.5L303.5 146L312 148.5L316.5 142.5V148.5L323 154.5L330 150.5L328 154.5L334.5 162.5L340.5 159.5L323 183.5L285.5 169L240.5 186.5L233.5 179.5L268.5 164V150.5L209.5 112L190 116.5L161 164L192.5 109.5L216.5 102V86.5C210.9 74.7577 203.807 69.1702 186 60.5C179.278 71.4115 171 84.5 171 84.5L173 92.5L186 109.5L166 89.5L80.5 148.5L101 152.5L155.5 112C163.121 110.389 165.175 113.658 167.5 122L144 137.5L151.5 152.5L166 128.5L141 166.5L104.5 157.5L48.5 137.5C39.4553 132.531 36.7682 123.091 35.5 96.5L40.5 46.5C26.47 102.807 19.9589 132.408 9.5 183.5L48.5 66C64.233 55.0111 69.0506 62.3549 76 81C83.2792 90.6112 88.8251 93.9766 101 96.5L131 84.5C122.528 70.6978 120.665 62.295 121 46.5C134.2 24.3334 143.661 14.1618 166 2L212 71.5L192.5 60.5H176.5L133.5 81L155.5 89.5L55 164C52.7451 179.412 46.9942 196.195 48.5 195.5ZM48.5 195.5L7 227.5L5.5 239C98.4745 245.753 144.193 249.784 186 258.5C194.439 257.204 199.732 254.189 209.5 247.5L218.5 288" stroke="white" stroke-width="3"/>
+                        </svg>
+                        <svg id="lace" width="65" height="240" viewBox="0 -0 144 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.3489 41.554C12.3489 41.554 15.3489 70.054 25.3489 70.554C35.3489 71.054 42.3489 58.054 45.8489 61.054C49.3489 64.054 45.8489 82.054 49.3489 87.054C52.8489 92.054 57.3489 79.554 65.8489 82.054C74.3489 84.554 68.8489 105.054 68.8489 105.054C68.8489 105.054 70.8489 93.054 83.8489 92.554C96.8489 92.054 82.1056 110.554 88.3489 113.054C94.5922 115.554 96.3489 99.554 103.349 99.554C110.349 99.554 99.7816 120.054 106.349 122.054C112.916 124.054 123.849 108.054 129.349 110.554C134.849 113.054 124.349 127.054 129.349 132.554C134.349 138.054 144.849 127.054 138.349 120.054C131.849 113.054 123.349 132.054 114.849 127.054C106.349 122.054 125.849 105.054 118.849 105.054C111.849 105.054 101.349 123.554 96.8489 120.054C92.3489 116.554 100.349 92.554 92.3489 96.554C84.3489 100.554 88.3489 115.554 81.3489 113.054C74.3489 110.554 81.3489 87.054 74.3489 87.054C67.3489 87.054 62.8489 99.554 62.8489 99.554C62.8489 99.554 65.8489 78.054 57.8489 75.054C49.8489 72.054 43.3489 81.054 38.849 79.054C34.3491 77.054 38.8489 63.554 35.3489 56.554C31.849 49.554 7.84806 60.0623 3.84861 68.5582C-0.150831 77.054 10.8488 132.062 18.8488 129.558C26.8488 127.054 14.2579 52.5601 14.2579 52.5601C14.2579 52.5601 19.3488 2.05787 29.8488 4.05787C40.3488 6.05787 18.8488 56.554 18.8488 56.554" stroke="#8E49E6" stroke-width="6"></path>
+                        </svg>
+                    </div>
+                </div>
+        </section>
+        <div id="supperflue"></div>
     </div>
     <a href="index.html" id="home" class="purple"> Go back home</a>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
