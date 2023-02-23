@@ -12,6 +12,12 @@
 }
 
 
+function sendEmail() 
+{
+    window.location = "mailto:robin73.bochu@gmail.com";
+}
+
+
 // QUAND ON ACTIVE LE HAMBURGER
 function toggleMenu(anim_load){
     let menu = document.querySelector(".menu")
@@ -237,31 +243,36 @@ window.onload = (event) => {
     window.addEventListener("scroll", myFunction);
     
     function myFunction() {
-        var length = lines[count].getTotalLength();
-        var section = lines[count].parentElement.parentElement.parentElement
-        if(count==0){
-            var scrollpercent = (window.pageYOffset-section.clientHeight*count)*1.5/section.clientHeight
-        }
-        else if(count==1){
-            var scrollpercent = (window.pageYOffset-section.clientHeight*count)*1.8/section.clientHeight +0.59
-        }
-        else{
-            var scrollpercent = (window.pageYOffset-section.clientHeight*count)*1.2/section.clientHeight +0.9
-        }
-
-        
-        var draw = length * scrollpercent;
-
-        // Reverse the drawing (when scrolling upwards)
-        lines[count].style.strokeDashoffset = length - draw;
-
-        if(draw>=length ){
-            lines[count].style.strokeDashoffset = 0
-            count+=1;
+        try{
             var length = lines[count].getTotalLength();
             var section = lines[count].parentElement.parentElement.parentElement
-            lines[count].style.strokeDasharray = length;
-            lines[count].style.strokeDashoffset = length;
+            if(count==0){
+                var scrollpercent = (window.pageYOffset-section.clientHeight*count)*1.5/section.clientHeight
+            }
+            else if(count==1){
+                var scrollpercent = (window.pageYOffset-section.clientHeight*count)*1.8/section.clientHeight +0.59
+            }
+            else{
+                var scrollpercent = (window.pageYOffset-section.clientHeight*count)*1.2/section.clientHeight +0.9
+            }
+    
+            
+            var draw = length * scrollpercent;
+    
+            // Reverse the drawing (when scrolling upwards)
+            lines[count].style.strokeDashoffset = length - draw;
+    
+            if(draw>=length ){
+                lines[count].style.strokeDashoffset = 0
+                count+=1;
+                var length = lines[count].getTotalLength();
+                var section = lines[count].parentElement.parentElement.parentElement
+                lines[count].style.strokeDasharray = length;
+                lines[count].style.strokeDashoffset = length;
+            }
+        }
+        catch(e){
+
         }
     }   
 
@@ -273,11 +284,18 @@ window.onload = (event) => {
         let values = [paraNewPos1,paraNewPos1,paraNewPos1,paraNewPos1,paraNewPos2,paraNewPos2,paraNewPos2,paraNewPos2]
 
         console.log(scrollParallax)
-
-        let rubs = this.documentElement.querySelectorAll(".ruban_skills span")
-        for(i = 0;i <= rubs.length; i+=1){
-            rubs[i].style.transform = "translateX("+ values[i] +"%)"
+        try{
+            let rubs = this.documentElement.querySelectorAll(".ruban_skills span")
+            for(i = 0;i <= rubs.length; i+=1){
+                if(scrollParallax<1.3){
+                    rubs[i].style.transform = "translateX("+ values[i] +"%)"
+                }
+            }
         }
+        catch(e){
+            
+        }
+        
     })
 
 
