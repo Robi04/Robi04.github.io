@@ -707,6 +707,12 @@ RESPONSIVE 5 PALIERS
     #title_5_middle{
         font-size: 170px;
     }
+
+
+    /* ART PORTFOLIO  */
+    #flex_art{
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 950px){
@@ -1144,4 +1150,36 @@ project_name_project.html
 
 #vis_admin_page{
     background-image: url(./assets/img/maq3.JPG);
+}
+
+
+
+
+
+/* SECTION 1 DES PROJETS AVEC UNE IMAGE PLUS LE TITRE EN GROS DEVANT*/
+.portfolio_img{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: top;
+    background-image: url(./assets/img/17-02-2022.TIF);
+    opacity: 0.45;
+}
+
+#vis_guweiz_like_1{
+    background-image: url(./assets/img/09-02-2022.TIF);
+}
+
+#vis_guweiz_like_2{
+    background-image: url(./assets/img/17-02-2022.TIF);
+}
+
+#content_project_art{
+    position: relative;
+    color: white;
+    margin-left: 70px;
+    margin-top: 20px;
+    width: 85vw;
+    margin-bottom: 30px;
 }
