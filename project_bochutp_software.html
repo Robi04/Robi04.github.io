@@ -10,7 +10,7 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div id="root">
+    <div id="root" class="font_white bg_black">
         <div id="cursor">
         </div>
         <div id="header">
@@ -62,6 +62,10 @@
             </div>
         </section>
     </div>
-    <a href="index.html" id="home" class="purple"> Go back home</a>
+    <button id="home" class="purple" onclick="changeColor()">
+        <svg style='animation: 2s all ease;' width="51" height="50" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path  d="M50.5 25C50.5 38.8071 40.4212 50 26.2177 50C12.0142 50 0.5 38.8071 0.5 25C0.5 11.1929 12.0142 0 26.2177 0C40.4212 0 50.5 11.1929 50.5 25Z" fill="#d9ceff"/>
+        </svg>        
+    </button>
 </body>
 </html>

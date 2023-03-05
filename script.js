@@ -18,14 +18,107 @@ function sendEmail()
 }
 
 
+function changeColor(){
+    let test_condition = false
+    let img_contain = document.querySelector("#img_container")
+    let root = document.querySelector("#root")
+    let title_2_left = document.querySelector("#title_2_left")
+
+    let content_section_5_right = document.querySelector("#content_section_5_right")
+    let sneaker = document.querySelector("#sneaker")
+
+
+    let player_card_left = document.querySelector("#player_card_left")
+    let player_card_right = document.querySelector("#player_card_right")
+
+    let sun = document.querySelector("#home")
+
+    for (i=0; i< root.classList.length;i++){
+        if (root.classList[i] == "font_white"){
+            test_condition = true
+        }
+    }
+    if (test_condition ) {
+        root.classList.remove("font_white")
+        root.classList.add("font_black")
+
+        root.classList.add("bg_white")
+        root.classList.remove("bg_black")
+
+        img_contain.classList.add("img_black")
+        img_contain.classList.remove("img_white")
+
+        title_2_left.classList.remove("font_white")
+        title_2_left.classList.add("font_black")
+
+        title_2_left.classList.add("bg_white")
+        title_2_left.classList.remove("bg_black")
+
+        player_card_left.classList.remove("bg_white")
+
+        player_card_left.classList.add("player_black")
+
+        for (let i = 0; i < player_card_right.children.length; i++) {
+            let childElement = player_card_right.children[i];
+    
+            childElement.classList.add('player_black')
+
+            childElement.classList.remove('bg_white')
+        }
+
+        content_section_5_right.classList.remove("content_section_5_right_white")
+        content_section_5_right.classList.add("content_section_5_right_black")
+
+        sneaker.children[0].classList.add('black_svg')
+        sneaker.children[0].classList.remove('white_svg')
+        
+        sun.children[0].children[0].style.fill = "#35355a"
+    }
+    else{
+        root.classList.add("font_white")
+        root.classList.remove("font_black")
+
+        root.classList.add("bg_black")
+        root.classList.remove("bg_white")
+
+        img_contain.classList.add("img_white")
+        img_contain.classList.remove("img_black")
+
+        title_2_left.classList.add("font_white")
+        title_2_left.classList.remove("font_black")
+
+        title_2_left.classList.add("bg_black")
+        title_2_left.classList.remove("bg_white")
+        
+        player_card_left.classList.add("bg_white")
+        player_card_left.classList.add("font_black")
+
+        player_card_left.classList.remove("player_black")
+
+        for (let i = 0; i < player_card_right.children.length; i++) {
+            let childElement = player_card_right.children[i];
+    
+            childElement.classList.remove('player_black')
+            
+            childElement.classList.add('bg_white')
+        }
+
+        content_section_5_right.classList.add("content_section_5_right_white")
+        content_section_5_right.classList.remove("content_section_5_right_black")
+
+        sneaker.children[0].classList.remove('black_svg')
+        sneaker.children[0].classList.add('white_svg')
+
+        sun.children[0].children[0].style.fill = "#d9ceff"
+    }
+
+}
+
+
 // QUAND ON ACTIVE LE HAMBURGER
 function toggleMenu(anim_load){
-    let menu = document.querySelector(".menu")
-    let ball = document.querySelector("#small_ball")
-    let size;
-    let r;
-    let g;
-    let b;
+    let menu = document.querySelector("#header")
+    let small_ball = document.querySelector("#small_ball")
 
     let menu1 = document.querySelector("#menu_first");
     let menu2 = document.querySelector("#menu_second");
@@ -36,84 +129,72 @@ function toggleMenu(anim_load){
     menu3.classList.toggle("menu_third_toggled");
 
     //REDUCTION DU MENU 
-    if (ball.classList.contains("enclenche")){
-        size = ball.clientWidth*0.7
-        r = 0;
-        g = 0;
-        b = 0;
-        var timer2 = setInterval(myTimer2, 1);
+    if (small_ball.classList.contains("enclenche")){
+        // size = small_ball.clientWidth*0.7
+        // r = 0;
+        // g = 0;
+        // b = 0;
+        // var timer2 = setInterval(myTimer2, 1);
+        small_ball.style.backgroundColor = "rgb(142, 73, 229)";
+        small_ball.style.padding = "3px"
+        small_ball.style.borderRadius = "100%"
+
+        document.querySelector("body").style.overflow = "visible";
+        document.querySelector("body").style.overflowX = "hidden";
+
         setTimeout(function(){
             if(anim_load){
                 document.querySelector("#menu_content").remove()
             }
-        },400)
+        },200)
+
+        setTimeout(function(){
+            if(anim_load){
+                small_ball.style.position = "absolute"
+            }
+        },1500)
+
+        document.querySelector("body").style.overflowX = "hidden";
+        small_ball.classList.remove("enclenche")
     }
 
     //AGRANDISSEMENT DU MENU
     else{
-        size=6
-        r =142;
-        g = 73;
-        b = 229;
-        ball.style.position = "fixed";
-        var timer1 = setInterval(myTimer1, 1);
+
+        small_ball.style.position = "fixed";
+
+
+        small_ball.style.padding = 100 + "vw";
+
+
+        if(root.classList.contains("bg_white")){
+            small_ball.style.backgroundColor = "#d9ceff"
+        }
+        else{
+            small_ball.style.backgroundColor = "#35355a"
+        }
+        document.querySelector("body").style.overflow = "hidden";
+        small_ball.classList.add("enclenche")
+        menu.style.zIndex = 4
         setTimeout(function(){
             if(anim_load){
-                let test = _("div","",ball,"menu_content")
+                let test = _("div","",small_ball,"menu_content")
                 let t1 = _("a","HOME",test,"","ahref_menu")
                 t1.href="index.html#section_1"
                 let t2 = _("a","SKILLS",test,"","ahref_menu")
                 t2.href= "index.html#section_3"
                 let t3 = _("a","WORKS",test,"","ahref_menu")
                 t3.href= "index.html#section_4"
+                test.style.transition= "all 0.5s ease" 
+                t1.style.transition= "all 0.5s ease" 
+                t2.style.transition= "all 0.5s ease" 
+                t3.style.transition= "all 0.5s ease" 
                 document.querySelector("#menu_content").addEventListener("click", function(){
                     toggleMenu(true)
+                    small_ball.position = "absolute"
                 });
             }
-        },400)
-    }
-
-    function myTimer1() {
-        size = size+7
-        r = r-1.3
-        g = g-1
-        b = b-1.5
-        ball.style.borderRadius = size + "px";
-        ball.style.padding = size + "px";
-        ball.style.backgroundColor = "rgb("+r+ ","+g+ ","+b+ ")"
-        if(b <= 0){
-            ball.style.padding = "1070px"
-            ball.style.borderRadius = "1070px"
-            clearInterval(timer1);
-            document.querySelector("body").style.overflow = "hidden";
-            ball.classList.add("enclenche")
-        }
-    }
-
-    function myTimer2() {
-        size = size-7
-        if(r<142)
-        {
-            r = r+1.2
-        }
-        if(g<73){
-            g = g+1.2
-        }
-        if(b<229){
-            b = b+1.8
-        }
-        ball.style.borderRadius = size + "px";
-        ball.style.padding = size + "px";
-        ball.style.backgroundColor = "rgb("+r+ ","+g+ ","+b+ ")"
-        if(size <= 0){
-            ball.style.padding = "3px"
-            ball.style.borderRadius = "3px"
-            clearInterval(timer2);
-            document.querySelector("body").style.overflow = "visible";
-            document.querySelector("body").style.overflowX = "hidden";
-            ball.classList.remove("enclenche")
-            ball.style.position = "absolute";
-        }
+        },700)
     }
 }
 
@@ -182,50 +263,23 @@ window.onload = (event) => {
     // Animation dès que l'on arrive sur une page
     body.style.overflow = "hidden";
     let small_ball = document.querySelector("#small_ball");
-    let size = document.querySelector("#section_1").clientWidth;
-    setTimeout(()=>{
-        if (document.querySelector("#section_1").clientHeight > document.querySelector("#section_1").clientHeight){
-            size = document.querySelector("#section_1").clientHeight
-        }
-        else{
-            size = document.querySelector("#section_1").clientWidth
-        }
-        small_ball.style.position="fixed"
-        small_ball.style.padding = size + "px";
-        small_ball.style.border_radius = size + "px";
-        small_ball.style.backgroundColor = "rgb(0,0,0)"
-        small_ball.style.zIndex = 3;
-        let r = 0;
-        let b = 0;
-        let g = 0;
-        let intervall_start = setInterval(() => {
-            size = size-7
-            if(r<142)
-            {
-                r = r+1.7
-            }
-            if(g<73){
-                g = g+1.1
-            }
-            if(b<229){
-                b = b+2
-            }
-            small_ball.style.borderRadius = size + "px";
-            small_ball.style.padding = size + "px";
-            small_ball.style.backgroundColor = "rgb("+r+ ","+g+ ","+b+ ")"
-            if(size <= 0){
-                small_ball.style.backgroundColor = "rgb(142,73,229)"
-                small_ball.style.padding = "3px"
-                small_ball.style.borderRadius = "3px"
-                clearInterval(intervall_start);
-                document.querySelector("body").style.overflow = "visible";
-                document.querySelector("body").style.overflowX = "hidden";
-                small_ball.classList.remove("enclenche")
-                small_ball.style.zIndex = 1;
-                small_ball.style.position = "absolute";
-            }
-        }, 3);
-    },200)
+    small_ball.style.backgroundColor = "rgb(255, 255, 255)";
+    
+
+
+
+    setTimeout(() => {
+    // small_ball.style.border_radius = size + "px";
+    small_ball.style.padding = 3 + "px";
+    small_ball.style.backgroundColor = "rgb(142, 73, 229)";
+    }, 1);
+
+    setTimeout(() => {
+        body.style.removeProperty('overflow');
+        small_ball.style.position = 'absolute';
+    },1500)
+    
+       
     
     //Draw the SVG Lines
     //Prepare the variables
@@ -278,8 +332,8 @@ window.onload = (event) => {
 
     document.addEventListener("scroll", function(){
         var scrollParallax= (window.pageYOffset-document.querySelector("#section_3").clientHeight*2)/document.querySelector("#section_3").clientHeight +0.5
-        let paraNewPos1 = scrollParallax*150*2-400
-        let paraNewPos2 = -scrollParallax*150*2
+        let paraNewPos1 = scrollParallax*150*1.5-400
+        let paraNewPos2 = -scrollParallax*150*1.5
 
         let values = [paraNewPos1,paraNewPos1,paraNewPos1,paraNewPos1,paraNewPos2,paraNewPos2,paraNewPos2,paraNewPos2]
 
