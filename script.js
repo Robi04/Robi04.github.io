@@ -21,6 +21,7 @@ function sendEmail()
 function changeColor(){
     let test_condition = false
     let img_contain = document.querySelector("#img_container")
+    let html = document.querySelector("html")
     let root = document.querySelector("#root")
     let title_2_left = document.querySelector("#title_2_left")
 
@@ -39,11 +40,17 @@ function changeColor(){
         }
     }
     if (test_condition ) {
+
+        sun.children[0].children[0].style.fill = "#35355a"
+
         root.classList.remove("font_white")
         root.classList.add("font_black")
 
         root.classList.add("bg_white")
         root.classList.remove("bg_black")
+
+        html.classList.add("bg_white")
+        html.classList.remove("bg_black")
 
         img_contain.classList.add("img_black")
         img_contain.classList.remove("img_white")
@@ -71,15 +78,18 @@ function changeColor(){
 
         sneaker.children[0].classList.add('black_svg')
         sneaker.children[0].classList.remove('white_svg')
-        
-        sun.children[0].children[0].style.fill = "#35355a"
     }
     else{
+        sun.children[0].children[0].style.fill = "#d9ceff"
+
         root.classList.add("font_white")
         root.classList.remove("font_black")
 
         root.classList.add("bg_black")
         root.classList.remove("bg_white")
+
+        html.classList.remove("bg_white")
+        html.classList.add("bg_black")
 
         img_contain.classList.add("img_white")
         img_contain.classList.remove("img_black")
@@ -108,8 +118,6 @@ function changeColor(){
 
         sneaker.children[0].classList.remove('black_svg')
         sneaker.children[0].classList.add('white_svg')
-
-        sun.children[0].children[0].style.fill = "#d9ceff"
     }
 
 }
@@ -381,3 +389,18 @@ window.onload = (event) => {
         lacepath.style.strokeDashoffset = start + "px"
      },1)
 }
+
+// Y axis scroll speed
+var velocity = 0.5;
+
+function update(){ 
+    var pos = $(window).scrollTop(); 
+    $('.portfolio_img').each(function() { 
+        var $element = $(this);
+        // subtract some from the height b/c of the padding
+        var height = $element.height()-1200;
+        $(this).css('backgroundPosition', '50% ' + Math.round((height - pos) * velocity) + 'px'); 
+    }); 
+};
+
+$(window).bind('scroll', update);

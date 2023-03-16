@@ -125,8 +125,7 @@ body{
 }
 
 #root{
-    transition: background-color 0.5s ease;
-    transition: color 0.5s ease;
+    transition: all 1s ease;
 }
 
 #home{
@@ -138,6 +137,7 @@ body{
     background-color: transparent;
     width: 50px;
     height: 50px;
+    transition: all 1s ease;
 }
 
 #home:hover{
@@ -146,9 +146,9 @@ body{
 
 .floating {
     animation-name: floating;
-    animation-duration: 7s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
 }
 
 @keyframes floating {
@@ -156,9 +156,9 @@ body{
         transform: translate(-50%,-50%) scale(1, 1);
     }
     50% {
-        transform: translate(-50%,-50%) scale(4, 4);
+        transform: translate(-50%,-50%) scale(2, 2);
     }
-    100% {
+        100% {
         transform: translate(-50%,-50%) scale(1, 1);
     }
 }
@@ -351,7 +351,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
-    transition: background-image 0.5s ease;
+    transition: background-image 1s ease;
     top: 36%;
     left: 46%;
     width: 900px;
@@ -661,6 +661,8 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     position: absolute;
     right: 10px;
     width: 40vw;
+    /* transition: all 1s ease; */
+    transition: border 1s ease;
 }
 
 .content_section_5_right_white{
@@ -901,7 +903,7 @@ RESPONSIVE 5 PALIERS
     }
 
     #content_section_5_right{
-        border-left: 3px solid white;
+        border-left: 3px solid;
     }
 }
 
@@ -1076,6 +1078,7 @@ project_name_project.html
 .header_explaination_project{
     display: flex;
     flex-direction: row;
+    margin-left: 50px;
 }
 
 #title_2_projects{
@@ -1089,12 +1092,11 @@ project_name_project.html
 
 
 .techno_title{
-    font-size: 35px;
+    font-size: 50px;
     width: 30vw;
 }
 
 .techno_section{
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     margin-right: 100px;
@@ -1204,9 +1206,9 @@ project_name_project.html
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-size: cover;
-    background-position: top;
-    background-image: url(./assets/img/17-02-2022.TIF);
+    background-position: center;
+    background-position-y: -168px;
+    background-image: url(./assets/img/09-02-2022.TIF);
     opacity: 0.45;
 }
 
@@ -1239,4 +1241,43 @@ project_name_project.html
 
 #superflu{
     height: 200vh
+}
+
+
+
+
+/* DRAWING PORTFOLIO */
+.gallery{
+    display: flex;
+    flex-direction: row;
+}
+
+.tile_art{
+    transition: all 1s ease;
+    z-index: 1;
+    border: 2px solid black;
+
+}
+
+.tile_art:hover{
+    transform: scale(125%,125%);
+    z-index: 2;
+}
+
+
+.tile_art:hover > span {
+    opacity: 1;    
+}
+
+#section_art{
+    height: max-content;
+}
+
+.name_tile_span{
+    opacity: 0;
+    transition:all 1s ease;
+    position: relative;
+    top: 50%;
+    text-align: center;
+    display: block;
 }

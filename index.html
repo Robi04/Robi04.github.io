@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg_black">
 <head>
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/R.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0">
     <title>Robin Bochu</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/ec422800ae.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     </div>
@@ -38,7 +39,7 @@
         </div>
         <section id="section_1">
             <div id="section_1_content">
-                <div id="title1" class="title  ">
+                <div id="title1" class="title">
                     <div id="first_line">
                         <span class="span_title1">Welcome to the</span>
                     </div>
@@ -58,8 +59,8 @@
             <div id="img_container" class="img_white"></div>
             <div id="quick_description" class="Azert-Mono"> 
                 <span>Data engineer student /</span>
-                <span>Developper /</span>
-                <span>Data scientist wannabe /</span>
+                <span>Data Analyst /</span>
+                <span>Looking for an internship</span>
             </div>
         </section>
         <section id="section_2">
@@ -91,11 +92,11 @@
                         <div><span class="purple">Telecom Saint Etienne </span> <span> - Data engineering</span></div>
                         <div><span class="cyan">3 </span><span> Years</span></div>
                     </div>
-                    <div data-aos="zoom-in" data-aos-delay="100" data-aos-offset="300" class="bg_white font_black">
+                    <div data-aos="zoom-in" data-aos-delay="100" data-aos-offset="250" class="bg_white font_black">
                         <div><span class="purple">IUT Annecy  </span> <span> - Diploma in computer science</span></div>
                         <div><span class="cyan">2 </span><span> years </span></div>
                     </div>
-                    <div data-aos="zoom-in" data-aos-delay="100" data-aos-offset="250" class="bg_white font_black">
+                    <div data-aos="zoom-in" data-aos-delay="100" data-aos-offset="140" class="bg_white font_black">
                         <div><span class="purple">Paul Héroult Highschool  </span> <span> - Bac Scientific speciality Earth and life sciences</span></div>
                         <div><span class="cyan">3 </span><span> years </span></div>
                     </div>
@@ -149,19 +150,19 @@
                     <span style="font-size: 14px;">.1 </span> <span>SITE WEB BOCHU TP</span>
                 </div>
             </a>
-            <a href="project_bochutp_software.html">
+            <a onclick="{toggleMenu(false); setInterval(()=>{if(document.querySelector('#small_ball').clientHeight > 2000){window.location.href = './project_bochutp_software.html';}},20) }">
                 <div class="project" data-aos="fade-right" data-aos-delay="150">
                     <span style="font-size: 14px;">.2 </span> <span>MANAGEMENT SOFTWARE</span>
                 </div>
             </a>
-            <a href="portfolio.html">
+            <a onclick="{toggleMenu(false); setInterval(()=>{if(document.querySelector('#small_ball').clientHeight > 2000){window.location.href = './portfolio.html';}},20) }">
                 <div class="project" data-aos="fade-right" data-aos-delay="200" > 
                     <span style="font-size: 14px;">.3 </span> <span>MY DRAWING PORTFOLIO</span>
                 </div>
             </a>
-            <a href="index.html">
+            <a onclick="{toggleMenu(false); setInterval(()=>{if(document.querySelector('#small_ball').clientHeight > 2000){window.location.href = './index.html';}},20) }">
                 <div class="project" data-aos="fade-right" data-aos-delay="250">
-                    <span style="font-size: 14px;">.4 </span> <span>KAGGLE</span>
+                    <span style="font-size: 14px;">.4 </span> <span>Flappy Bird Like</span>
                 </div>
             </a>
         </section>
@@ -190,7 +191,6 @@
                     </div>
                 </div>
         </section>
-        <div id="superflu"></div>
     </div>
     <button id="home" class="purple" onclick="changeColor()">
         <svg style='animation: 2s all ease;' width="51" height="50" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg">

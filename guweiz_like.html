@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="bg_black">
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/R.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0">
+    <title>Robin Bochu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="root" class="font_white bg_black">
+        <div id="cursor">
+        </div>
+        <div id="header">
+            <button class="menu" id="toggle-menu" onclick="toggleMenu(true)">
+                <div id="menu_first" class="bar_menu">
+                    <svg width="56" height="14" viewBox="0 0 56 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.0311271 5.46161C0.494087 1.30206 28.8352 9.42109 45.1076 2.24185C61.3801 -4.93738 55.9743 7.42232 49.2329 7.42234C42.4916 7.42237 8.18897 13.9817 8.08048 13.1085C4.36466 12.1161 -0.431833 9.62115 0.0311271 5.46161Z" fill="#8E49E6"/>
+                    </svg>                        
+                </div>
+                <div id="menu_second" class="bar_menu">
+                    <svg width="80" height="14" viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M76.0437 1.3149C74.3428 5.4674 36.7435 15.4816 11.2628 4.54898C-14.2179 -6.38366 12.5094 10.4903 17.2484 12.7567C21.9874 15.023 75.7947 11.8605 77.5173 13.3062C81.9532 13.7261 77.7445 -2.83761 76.0437 1.3149Z" fill="#8E49E6"/>
+                        </svg>                        
+                </div>
+                <div id="menu_third" class="bar_menu">
+                    <svg width="64" height="14" viewBox="0 0 64 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60.694 0.651865C58.0785 -2.13693 27.5549 8.80315 9.47159 6.38555C-8.61167 3.96796 3.15491 8.20068 12.9656 11.1996C22.7764 14.1986 59.1451 14.5303 63.6506 11.3513C63.786 4.97273 63.3095 3.44066 60.694 0.651865Z" fill="#8E49E6"/>
+                    </svg>   
+                </div>
+            </button>
+        </div>
+        <div id="small_ball"></div>
+        <section id="section_1" >
+            <div class="portfolio_img"></div>
+            <div class="project_title">
+                <div class="title">
+                    <div id="first_line">
+                        <span class="span_title1">STUDY OF 2  </span>
+                    </div>
+                    <div id="second_line">
+                        <span class="span_title1">GUWEIZ PIECES </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section_2" >
+
+
+            <!-- CONTEXT OF DEVELOPMENT -->
+            <div>
+                <h2 id = 'subtitle_project' class="purple" >First digital painting I've done : </h2>
+                <div id="content_project" class="sans-serif">
+                    Since I bought my differents tablets I had only been drawing manga/anime charactere. But with time I disovered many artists with their own style. 
+                    Guweiz is the first one who truly amazed me with the mood he creates : 
+                    <ul>
+                        <li> Dark color</li>
+                        <li> Chill mood</li>
+                        <li> Asian environnement</li>
+                    </ul>
+                    So I decided to try painting and not only sketching 2 of his pieces which fascinated me. It took me 5 hours for one and 10 hours for the second one.
+                    This is the first time I really enjoyed playing with the colors and discovering how people usually do (their workflow)
+                </div>
+                <div id="content_project" class="sans-serif">
+                    When I discovered what you can achieve by painting I even came back to my previous pieces to finish them and give them more of my personnality !
+                </div>
+            </div>
+
+             <!-- VISUALS OF THE PAINTINGS -->
+             <div>
+                <h2 id = 'subtitle_project' class="purple" >Render : </h2>
+                <div id='flex_art' style="display: flex; width:95vw" >
+                    <div id="content_project_art" class="Ginger">
+                        <h2>THE FIRST I'VE DONE IN 5 HOURS :</h2>
+                        <span>Less details than the second one but I'm still proud and happy with how it went</span>
+                        <div id="vis_guweiz_like_1" class="vis_1"></div>
+                    </div>      
+                    <div id="content_project_art" class="Ginger" style="margin-left: 50px;">
+                        <h2>THE SECOND ONE I'VE REALISED IN 10 HOURS :</h2>
+                        <span>Really proud of the skin tones and the face in general </span>
+                        <div id="vis_guweiz_like_2" class="vis_1"></div>
+                        <div id="vis_guweiz_like_3" class="vis_2"></div>
+                    </div>  
+                </div>
+            </div>
+       
+        </section>
+    </div>
+    <button id="home" class="purple" onclick="changeColor()">
+        <svg style='animation: 2s all ease;' width="51" height="50" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path  d="M50.5 25C50.5 38.8071 40.4212 50 26.2177 50C12.0142 50 0.5 38.8071 0.5 25C0.5 11.1929 12.0142 0 26.2177 0C40.4212 0 50.5 11.1929 50.5 25Z" fill="#d9ceff"/>
+        </svg>        
+    </button>
+</body>
+</html>
