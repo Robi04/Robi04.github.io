@@ -32,6 +32,8 @@ function changeColor(){
     let player_card_left = document.querySelector("#player_card_left")
     let player_card_right = document.querySelector("#player_card_right")
 
+    let resume = document.querySelector("#resume")
+
     let sun = document.querySelector("#home")
 
     for (i=0; i< root.classList.length;i++){
@@ -76,6 +78,12 @@ function changeColor(){
         content_section_5_right.classList.remove("content_section_5_right_white")
         content_section_5_right.classList.add("content_section_5_right_black")
 
+        resume.classList.remove("font_white")
+        resume.classList.add("font_black")
+
+        resume.classList.add("bg_white")
+        resume.classList.remove("bg_black")
+
         sneaker.children[0].classList.add('black_svg')
         sneaker.children[0].classList.remove('white_svg')
     }
@@ -116,8 +124,15 @@ function changeColor(){
         content_section_5_right.classList.add("content_section_5_right_white")
         content_section_5_right.classList.remove("content_section_5_right_black")
 
-        sneaker.children[0].classList.remove('black_svg')
-        sneaker.children[0].classList.add('white_svg')
+        resume.classList.add("font_white")
+        resume.classList.remove("font_black")
+
+        resume.classList.remove("bg_white")
+        resume.classList.add("bg_black")
+
+
+        // sneaker.children[0].classList.remove('black_svg')
+        // sneaker.children[0].classList.add('white_svg')
     }
 
 }
@@ -172,7 +187,7 @@ function toggleMenu(anim_load){
         small_ball.style.position = "fixed";
 
 
-        small_ball.style.padding = 100 + "vw";
+        small_ball.style.padding = 140 + "vw";
 
 
         if(root.classList.contains("bg_white")){
@@ -183,7 +198,7 @@ function toggleMenu(anim_load){
         }
         document.querySelector("body").style.overflow = "hidden";
         small_ball.classList.add("enclenche")
-        menu.style.zIndex = 4
+        menu.style.zIndex = 100
         setTimeout(function(){
             if(anim_load){
                 let test = _("div","",small_ball,"menu_content")
@@ -404,3 +419,68 @@ function update(){
 };
 
 $(window).bind('scroll', update);
+
+let can_be_developped = document.querySelectorAll(".canBeDevelopped")
+document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement,
+    text = target.textContent || target.innerText; 
+
+    if (e.target.classList.contains("canBeDevelopped")){
+        const styles = window.getComputedStyle(e.target);
+        const image = styles.backgroundImage;
+        const url = image.slice(5, -2);
+
+        console.log(url)  
+
+
+        const styles2 = window.getComputedStyle(e.target);
+        const image2 = styles2.transition;
+
+
+        prevwidth = styles2.width
+        prevheight =styles2.height
+        prevbackgroundImage = styles2.backgroundImage
+        prevbackgroundSize = styles2.backgroundSize
+        prevbackgroundRepeat = styles2.backgroundRepeat
+        prevbackgroundPosition = styles2.backgroundPosition
+        prevposition = styles2.position
+        prevtop = styles2.top
+        prevleft = styles2.left
+        prevzIndex = styles2.zIndex 
+        
+        console.log(image2)
+
+        x = _("div","",document.querySelector("body"),"zoom-" + url,"picture_developped")
+        x.style.transition = "1s all linear"
+        x.style.position = 'fixed'
+        x.style.top = "0px"
+        x.style.left = '0px'
+        x.style.width = '100vw'
+        x.style.height = '100vh'
+        x.style.backgroundColor= 'rgba(24,25,23,0.5)'
+        x.style.backgroundImage = 'url('+url+")"
+        x.style.backgroundPosition = 'center'
+        x.style.backgroundSize = 'contain'
+        x.style.backgroundRepeat = 'no-repeat'
+        x.style.zIndex = 3
+
+
+        x.addEventListener("click",()=>{
+            e.target.style.transition = "0s all ease"
+            e.target.style.transition = "1s all ease"
+            e.target.style.position = prevposition
+            e.target.style.width = prevwidth
+            e.target.style.height = prevheight
+            e.target.style.backgroundSize = prevbackgroundSize
+            e.target.style.backgroundRepeat = prevbackgroundRepeat
+            e.target.style.backgroundPosition = prevbackgroundPosition
+            e.target.style.top = prevtop
+            e.target.style.left = prevleft
+            e.target.style.top = prevtop
+            e.target.style.left = prevleft
+            e.target.style.zIndex = prevzIndex
+            x.remove()
+        })
+    }
+}, false);

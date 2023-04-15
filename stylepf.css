@@ -1,0 +1,202 @@
+.header_explaination_project{
+    margin-top: 25px;
+}
+
+#section_art{
+    margin-top: 75px;
+}
+
+#section_art > ul {
+    width: 50vw; 
+    list-style-type: none;
+}
+
+#first_tile{
+    top:200px; 
+    margin-bottom:400px;
+}
+
+
+.tile_art{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom:200px;
+    width: 500px;
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+}
+
+.tile_art span{
+    font-size: 60px;
+    mix-blend-mode: difference;
+}
+
+/* DRAWING PORTFOLIO */
+.gallery{
+    display: flex;
+    flex-direction: row;
+}
+
+.tile_art{
+    transition: all 1s ease;
+    z-index: 1;
+    border: 2px solid black;
+
+}
+
+.tile_art:hover{
+    transform: scale(125%,125%);
+    z-index: 2;
+}
+
+
+.tile_art:hover > span {
+    opacity: 1;    
+}
+
+#section_art{
+    height: max-content;
+}
+
+.name_tile_span{
+    opacity: 0;
+    transition:all 1s ease;
+    position: relative;
+    top: 50%;
+    text-align: center;
+    display: block;
+}
+
+
+.sec_1_pf{
+    background-image: url(./assets/img/02-04-2023.gif);
+    background-position-x: center;
+    background-size: contain;
+}
+
+
+.sec_1_guweiz{
+    background-position: center;
+    background-size: contain;
+    background-image: url(./assets/img/09-02-2022.TIF);
+}
+
+#vis_guweiz_like_1{
+    background-image: url(./assets/img/09-02-2022.TIF);
+}
+
+#vis_guweiz_like_2{
+    background-image: url(./assets/img/17-02-2022.TIF);
+}
+
+#vis_guweiz_like_3{
+    background-image: url(./assets/img/17-02-zoom.jpeg);
+}
+
+.vis_2{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20vw;
+    margin-top: 20px;
+}
+
+#content_project_art{
+    position: relative;
+    margin-left: 70px;
+    margin-top: 20px;
+    width: 85vw;
+    margin-bottom: 30px;
+}
+
+#superflu{
+    height: 200vh
+}
+
+
+
+
+@media (max-width: 1200px){
+    .sec_1_pf{
+        background-size: cover;
+    }
+
+    .tile_art{
+        width: 350px;
+        height: 510px;
+    }
+
+    .project_title{
+        font-size: 100px;
+    }
+
+    .sec_1_guweiz{
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+
+@media (max-width: 950px){
+    .tile_art{
+        width: 325px;
+        height: 500px;
+    }
+
+    .tile_art span{
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 769px){
+    #first_tile{
+        top:0; 
+        margin-bottom:200px;
+    }
+
+    .tile_art{
+        width: 400px;
+        height: 600px;
+        margin-bottom: 100px;
+    }
+    #section_art > ul {
+        margin-top: 200px;
+        width: 100vw;
+
+    }
+
+    #section_art{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 650px){
+    .tile_art{
+        width: 350px;
+        height: 500px;
+    }
+
+    .project_title{
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 500px){
+    .project_title{
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px){
+    .tile_art{
+        width: 250px;
+        height: 400px;
+    }
+}
+
+
+
+
+
+

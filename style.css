@@ -129,6 +129,7 @@ body{
 }
 
 #home{
+    z-index: 2;
     font-size: 14px;
     position: fixed;
     bottom: 30px;
@@ -328,9 +329,9 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     opacity: 1;
     border-radius: 100%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 4;
     background-color: rgba(142, 73, 229, 1);
-    transition: all 1.5s ease;
+    transition: all 1s ease;
 }
 
 #big_ball{
@@ -422,6 +423,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     margin-left: 50px;
     top: 105vh;
     position: absolute;
+    transition: 1s all ease;
 }
 
 #title_2_left span{
@@ -694,10 +696,34 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     top: 30vh;
 }
 
-#divider svg{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+/* #divider svg{
+   
+} */
+
+#resume{
+    text-align: center;
+    display: block;
+    position: relative;
+    top: 163px;
+    left: -50px;
+    transition: background-color 1s ease;
+}
+
+#resume > span{
+    border-radius: 23px;
+    font-size: 25px;
+
+    color: black;
+    background-color: whitesmoke;
+    padding: 15px;
+    transition: all 1s ease;
+}
+
+#resume > span:hover{
+
+    color: white;
+    background-color: black;
+    padding: 15px;
 }
 
 /* SUPPERFLUE */
@@ -789,6 +815,7 @@ RESPONSIVE 5 PALIERS
         margin-left: 0;
         margin-bottom: 50px;
         z-index: 3;
+        transition: all 1s ease;
     }
 
 
@@ -831,6 +858,10 @@ RESPONSIVE 5 PALIERS
 
     #divider svg{
         top : -123px;
+    }
+
+    #resume{
+        top: 0px;
     }
 }
 
@@ -1195,89 +1226,4 @@ project_name_project.html
 
 #vis_admin_page{
     background-image: url(./assets/img/maq3.JPG);
-}
-
-
-
-
-
-/* SECTION 1 DES PROJETS AVEC UNE IMAGE PLUS LE TITRE EN GROS DEVANT*/
-.portfolio_img{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-position: center;
-    background-position-y: -168px;
-    background-image: url(./assets/img/09-02-2022.TIF);
-    opacity: 0.45;
-}
-
-#vis_guweiz_like_1{
-    background-image: url(./assets/img/09-02-2022.TIF);
-}
-
-#vis_guweiz_like_2{
-    background-image: url(./assets/img/17-02-2022.TIF);
-}
-
-#vis_guweiz_like_3{
-    background-image: url(./assets/img/17-02-zoom.jpeg);
-}
-
-.vis_2{
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 20vw;
-    margin-top: 20px;
-}
-
-#content_project_art{
-    position: relative;
-    margin-left: 70px;
-    margin-top: 20px;
-    width: 85vw;
-    margin-bottom: 30px;
-}
-
-#superflu{
-    height: 200vh
-}
-
-
-
-
-/* DRAWING PORTFOLIO */
-.gallery{
-    display: flex;
-    flex-direction: row;
-}
-
-.tile_art{
-    transition: all 1s ease;
-    z-index: 1;
-    border: 2px solid black;
-
-}
-
-.tile_art:hover{
-    transform: scale(125%,125%);
-    z-index: 2;
-}
-
-
-.tile_art:hover > span {
-    opacity: 1;    
-}
-
-#section_art{
-    height: max-content;
-}
-
-.name_tile_span{
-    opacity: 0;
-    transition:all 1s ease;
-    position: relative;
-    top: 50%;
-    text-align: center;
-    display: block;
 }
