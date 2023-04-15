@@ -21,6 +21,10 @@ POUR TOUS LES ELEMENTS
     display: none;
 }
 
+html{
+    max-width: 100vw;
+}
+
 .bg_black{
     background-color: #35355a;
 }
@@ -331,7 +335,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     transform: translate(-50%, -50%);
     z-index: 4;
     background-color: rgba(142, 73, 229, 1);
-    transition: all 1s ease;
+    transition: all 1.3s ease;
 }
 
 #big_ball{
@@ -460,6 +464,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     /* background-color: rgb(43,44,44); */
     padding: 26px;
     border-radius: 16px;
+    box-shadow: 10px 5px 5px grey;
 }
 
 /* DESCRIPTION DE MA SCOLARITÉ */
@@ -481,6 +486,7 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     padding: 20px;
     margin: 20px;
     border-radius: 16px;
+    box-shadow: 10px 5px 5px grey;
     /* background-color: rgb(43,44,44); */
 }
 
@@ -601,7 +607,12 @@ Ball est au bout de mon dessin et qui sera le commencement du svg
     padding-bottom: 20px;
     border-bottom: solid 1px rgba(142, 73, 229, 1);
     left: 5vw;
-    width: 80vw;}
+    width: 80vw;
+}
+
+.project > span{
+    transition: all 0.3s ease;
+}
 
 #section_4 a :hover{
     color: rgba(142, 73, 229, 1);
